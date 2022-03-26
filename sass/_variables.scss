@@ -1,21 +1,27 @@
 $navHeight: 100px;
-$bgcNavDefault: rgb(200, 200, 200);
+$bgcNavDefault: rgb(226, 226, 226);
+$widthHeaderInfoBlock: 400px;
+// $heightHeaderInfoBlock: 400px;
+$heightHeaderInfoBlock: 45%;
 
 $breakPoints: (
-  smartphone: (min-width: 460px),
+  smartphone-small: (min-width: 360px),
+  smartphone: (min-width: 410px),
+  // smartphone: (min-width: 460px),
   smartphone-large: (min-width: 640px),
-  tablet: (min-width: 800px),
+  tablet: (min-width: 768px),
+  tablet-medium: (min-width: 800px),
   tablet-large: (min-width: 1024px),
   desktop-small: (min-width: 1280px),
   desktop-medium: (min-width: 1680px),
   desktop-large: (min-width: 1920px)
 );
 
-@mixin mediaQueries($breakPoint) {
+@mixin mediaQueries($breakPoint, $orientation: portrait) {
   $size: map-get($map: $breakPoints, $key: $breakPoint);
 
   @if ($size) {
-    @media #{$size} {
+    @media #{$size} and (orientation: $orientation){
       @content;
     }
   } @else {

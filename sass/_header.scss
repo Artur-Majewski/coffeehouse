@@ -1,4 +1,225 @@
 .header {
-margin-top: 100px;
-background-color: orange;
+  margin-top: 100px;
+  height: calc(100vh - 100px);
+  background-color: orange;
+  background-image: url('../images/coffee_header_400-640.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+
+  @include mediaQueries(tablet-large, landscape) {
+    background-image: url('../images/coffee_header_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include mediaQueries(smartphone-large, landscape) {
+    background-image: url('../images/coffee_header_1200x600.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__infos {
+    display: flex;
+    height: calc(100vh - 100px);
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    transition: 1s;
+
+    @include mediaQueries(tablet-large, landscape) {
+      justify-content: center;
+    }
+
+    &__move {
+      position: relative;
+      width: 10%;
+      // height: calc((100vh - 100px) * 0.4);
+      margin-top: calc((100vh - 100px) * 0.125);
+      margin-bottom: calc((100vh - 100px) * 0.125);
+      // background-color: rgba(150, 150, 150, 0.5);
+      z-index: 3;
+      border-top: calc((100vh - 100px) * 0.125) solid transparent;
+      border-bottom: calc((100vh - 100px) * 0.125) solid transparent;
+
+      &:nth-child(1) {
+        border-right: 40px solid rgba(150, 150, 150, 0.5);
+        left: 1%;
+      }
+
+      &:nth-child(2) {
+        border-left: 40px solid rgba(150, 150, 150, 0.5);
+        right: 1%;
+      }
+
+      @include mediaQueries(smartphone, portrait) {
+        margin-top: calc((100vh - 100px) * 0.075);
+        margin-bottom: calc((100vh - 100px) * 0.075);
+      }
+
+      @include mediaQueries(smartphone-large, landscape) {
+        // width: 5%;
+
+        &:nth-child(1) {
+          // left: 6%;
+          // border-left: 30px solid rgba(150, 150, 150, 0.5);
+          // // border-left: 10px solid black;
+          // // border-top: 35px solid transparent;
+          // // border-bottom: 35px solid transparent;
+        }
+
+        &:nth-child(2) {
+          // right: 6%;
+          // border-left: 30px solid rgba(150, 150, 150, 0.5);
+        }
+      }
+
+
+      @include mediaQueries(tablet, landscape) {
+        // width: 5%;
+
+        // &:nth-child(1) {
+        //   left: 11%;
+        // }
+
+        // &:nth-child(2) {
+        //   right: 11%;
+        // }
+      }
+
+      @include mediaQueries(tablet, portrait) {
+        &:nth-child(1) {
+          border-right: 50px solid rgba(150, 150, 150, 0.5);
+          left: 8%;
+        }
+  
+        &:nth-child(2) {
+          border-left: 50px solid rgba(150, 150, 150, 0.5);
+          right: 8%;
+        }
+      }
+
+      @include mediaQueries(tablet, landscape) {
+        &:nth-child(1) {
+          border-right: 50px solid rgba(150, 150, 150, 0.5);
+          left: 7%;
+        }
+  
+        &:nth-child(2) {
+          border-left: 50px solid rgba(150, 150, 150, 0.5);
+          right: 7%;
+        }
+      }
+
+      @include mediaQueries(tablet-large, landscape) {
+        display: none;
+      }
+
+    }
+  }
+
+  &__info {
+    position: absolute;
+    width: 100%;
+    height: calc((100vh - 100px) * 0.5);
+    background-color: rgba($color: white, $alpha: 0.9);
+    box-shadow: 0 0 20px 10px rgba($color: white, $alpha: 0.9);
+    opacity: 0;
+    transition: 1s;
+
+    @include mediaQueries(smartphone) {
+      height: calc((100vh - 100px) * 0.4);
+    }
+
+    @include mediaQueries(smartphone-large, landscape) {
+      width: 90%;
+      margin-left: 5%;
+    }
+
+    @include mediaQueries(tablet, landscape) {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    @include mediaQueries(tablet, portrait) {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    @include mediaQueries(tablet-large, landscape) {
+      position: static;
+      width: calc((100% - 10%)/ 3);
+      max-width: 400px;
+      opacity: 1;
+      margin: 0;
+
+      &:nth-child(4) {
+        background-color: rgba($color: rgb(226, 226, 226), $alpha: 0.9);
+        box-shadow: 0 0 20px 10px rgba($color: rgb(226, 226, 226), $alpha: 0.9);
+        z-index: 1;
+      }
+
+    }
+
+    @include mediaQueries(desktop-small, landscape) {
+      height: calc((100vh - 100px) * 0.4);
+    }
+
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 10px;
+
+      @include mediaQueries(smartphone-large, landscape) {
+        font-size: 1.5rem;
+      }
+
+      @include mediaQueries(smartphone) {
+        font-size: 2.2rem;
+      }
+
+      @include mediaQueries(tablet, landscape) {
+        font-size: 1.8rem;
+      }
+
+      @include mediaQueries(tablet-medium, portrait) {
+        font-size: 2.8rem;
+      }
+    }
+
+    &__content {
+      text-align: center;
+      padding-left: 15%;
+      padding-right: 15%;
+      font-size: 1.3rem;
+
+      @include mediaQueries(smartphone, portrait) {
+        font-size: 1.3rem;
+      }
+
+      @include mediaQueries(smartphone-large, landscape) {
+        font-size: 1.1rem;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+
+      @include mediaQueries(tablet, landscape) {
+        font-size: 1.2rem;
+      }
+
+      @include mediaQueries(tablet, portrait) {
+        font-size: 1.7rem;
+      }
+
+      @include mediaQueries(tablet-medium, portrait) {
+        font-size: 2.1rem;
+      }
+
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 1.3rem;
+      }
+
+    }
+  }
 }

@@ -8,13 +8,17 @@
   height: $navHeight;
   background-color: $bgcNavDefault;
 
-  @include mediaQueries(tablet-large) {
+  @include mediaQueries(smartphone-large, landscape) {}
+
+  @include mediaQueries(tablet-large, landscape) {
     justify-content: flex-start;
   }
 
   &__logotype__ico {
     margin-left: 20px;
     height: $navHeight;
+
+    
   }
 
   &__logotype__name {
@@ -22,9 +26,15 @@
     width: auto;
     color: rgb(50, 50, 50);
     margin-right: 100px;
+    text-align: center;
+
+    // @include mediaQueries(smartphone){
+    // }
+
     @include mediaQueries(smartphone) {
       font-size: 2.5rem;
       margin-right: 50px;
+      text-align: left;
     }
     @include mediaQueries(tablet) {
       font-size: 3rem;
@@ -51,7 +61,7 @@
       transition: 1s;
       opacity: 0;
 
-      @include mediaQueries(tablet-large) {
+      @include mediaQueries(tablet-large, landscape) {
         position: static;
         top: auto;
         left: auto;
@@ -80,7 +90,7 @@
       background-color: $bgcNavDefault;
       cursor: pointer;
 
-      @include mediaQueries(tablet-large) {
+      @include mediaQueries(tablet-large, landscape) {
         position: relative;
         top: auto;
         left: auto;
@@ -155,7 +165,7 @@
         transform: scale(0);
       }
 
-      @include mediaQueries(tablet-large) {
+      @include mediaQueries(tablet-large, landscape) {
         display: none;
       }
     }
