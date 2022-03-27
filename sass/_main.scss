@@ -1,0 +1,165 @@
+.main-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: $bgcNavDefault;
+
+  &__header-title {
+    margin: 15px 0;
+    text-align: center;
+
+    @include mediaQueries(smartphone, portrait) {
+      font-size: 2rem;
+    }
+
+    @include mediaQueries(smartphone-large, landscape) {
+      margin: 25px 0;
+    }
+
+    @include mediaQueries(tablet-medium, landscape) {
+      font-size: 2rem;
+      margin: 30px 0;
+    }
+
+    @include mediaQueries(tablet-medium, portrait) {
+      font-size: 2.5rem;
+      margin: 30px 0;
+    }
+
+    @include mediaQueries(desktop-small, landscape) {
+      font-size: 3rem;
+    }
+  }
+
+  // &__articles {}
+
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px 50px;
+
+  @include mediaQueries(smartphone-large, landscape) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &:nth-child(3) {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  @include mediaQueries(tablet-medium, portrait) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &:nth-child(3) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__picture {
+    position: relative;
+
+    @include mediaQueries(smartphone-large, landscape) {
+      width: 35%;
+      margin: 0 auto;
+    }
+
+    @include mediaQueries(tablet-medium, landscape) {
+      width: 30%;
+    }
+
+    @include mediaQueries(tablet-medium, portrait) {
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    @include mediaQueries(tablet-large, landscape) {
+      width: 40%;
+    }
+
+    @include mediaQueries(desktop-small, landscape) {
+      width: 35%;
+    }
+
+    & img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  &__text {
+    @include mediaQueries(smartphone-large, landscape) {
+      width: 65%;
+      padding: 0 25px;
+    }
+
+    @include mediaQueries(tablet-medium, landscape) {
+      width: 60%;
+      padding: 0 25px;
+    }
+
+    @include mediaQueries(tablet-medium, portrait) {
+      width: 60%;
+      padding: 0 15px;
+    }
+
+    @include mediaQueries(desktop-small, landscape) {
+      width: 65%;
+      padding: 0 15px;
+    }
+
+    &__title {
+      margin: 10px 0;
+      text-align: center;
+      font-size: 1.5rem;
+
+      @include mediaQueries(smartphone, portrait) {
+        font-size: 1.6rem;
+      }
+
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.7rem;
+      }
+
+      @include mediaQueries(tablet-medium, portrait) {
+        font-size: 1.9rem;
+      }
+
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 2.2rem;
+      }
+
+      // @include mediaQueries(tablet, landscape) {
+      //   width: 50%;
+      // }
+    }
+
+    &__content {
+      text-align: justify;
+      font-size: 1.2rem;
+
+      @include mediaQueries(smartphone, portrait) {
+        font-size: 1.4rem;
+      }
+
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.4rem;
+      }
+
+      @include mediaQueries(tablet-medium, portrait) {
+        font-size: 1.7rem;
+      }
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 1.5rem;
+      }
+      // @include mediaQueries(tablet, landscape) {
+      //   width: 50%;
+      // }
+
+      // text-align: center;
+      // letter-spacing: 0.75px;
+    }
+  }
+
+}

@@ -55,12 +55,24 @@
         margin-bottom: calc((100vh - 100px) * 0.075);
       }
 
+      @include mediaQueries(smartphone-large, landscape) {
+        margin-top: calc((100vh - 100px) * 0.075);
+        margin-bottom: calc((100vh - 100px) * 0.075);
+        &:nth-child(1) {
+          left: 1%;
+        }
+  
+        &:nth-child(2) {
+          right: 1%;
+        }
+      }
+
       @include mediaQueries(tablet, portrait) {
         &:nth-child(1) {
           border-right: 50px solid rgba(150, 150, 150, 0.5);
           left: 8%;
         }
-  
+
         &:nth-child(2) {
           border-left: 50px solid rgba(150, 150, 150, 0.5);
           right: 8%;
@@ -72,7 +84,7 @@
           border-right: 50px solid rgba(150, 150, 150, 0.5);
           left: 7%;
         }
-  
+
         &:nth-child(2) {
           border-left: 50px solid rgba(150, 150, 150, 0.5);
           right: 7%;
@@ -89,14 +101,14 @@
   &__info {
     position: absolute;
     width: 100%;
-    height: calc((100vh - 100px) * 0.5);
-    background-color: rgba($color: white, $alpha: 0.9);
-    box-shadow: 0 0 20px 10px rgba($color: white, $alpha: 0.9);
+    height: calc((100vh - 100px) * 0.4);
+    background-color: rgba($color: white, $alpha: 0.8);
+    box-shadow: 0 0 20px 10px rgba($color: white, $alpha: 0.8);
     opacity: 0;
     transition: 1s;
 
     @include mediaQueries(smartphone) {
-      height: calc((100vh - 100px) * 0.4);
+      height: calc((100vh - 100px) * 0.37);
     }
 
     @include mediaQueries(smartphone-large, landscape) {
@@ -117,7 +129,7 @@
     @include mediaQueries(tablet-large, landscape) {
       position: static;
       width: calc((100% - 10%)/ 3);
-      max-width: 400px;
+      max-width: calc(1280px / 3);
       opacity: 1;
       margin: 0;
 
@@ -136,23 +148,28 @@
     &__title {
       width: 100%;
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-top: 10px;
 
       @include mediaQueries(smartphone-large, landscape) {
-        font-size: 1.5rem;
+        margin-top: 5px;
+        font-size: 1.2rem;
       }
 
-      @include mediaQueries(smartphone) {
-        font-size: 2.2rem;
+      @include mediaQueries(smartphone, portrait) {
+        font-size: 1.8rem;
       }
 
       @include mediaQueries(tablet, landscape) {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       @include mediaQueries(tablet-medium, portrait) {
         font-size: 2.8rem;
+      }
+
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 2.2rem;
       }
     }
 
@@ -160,10 +177,10 @@
       text-align: center;
       padding-left: 15%;
       padding-right: 15%;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
 
       @include mediaQueries(smartphone, portrait) {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
 
       @include mediaQueries(smartphone-large, landscape) {
@@ -173,7 +190,7 @@
       }
 
       @include mediaQueries(tablet, landscape) {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
       }
 
       @include mediaQueries(tablet, portrait) {
@@ -184,9 +201,15 @@
         font-size: 2.1rem;
       }
 
-      @include mediaQueries(desktop-small, landscape) {
-        font-size: 1.3rem;
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.35rem;
       }
+
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 1.5rem;
+      }
+
+
 
     }
   }
