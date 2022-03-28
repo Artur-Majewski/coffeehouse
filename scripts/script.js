@@ -1,45 +1,84 @@
-const btnBurger = document.querySelector('.nav-bar__menu__burger');
-const btnBurgerIcoUpper = document.querySelector('.nav-bar__menu__burger__ico-upper');
-const btnBurgerIcoCenter = document.querySelector('.nav-bar__menu__burger__ico-center');
-const btnBurgerIcoBottom = document.querySelector('.nav-bar__menu__burger__ico-bottom');
-const menuList = document.querySelector('.nav-bar__menu__list');
-// const infos = document.querySelector('.header__infos');
+const btnBurger = document.querySelector(".nav-bar__menu__burger");
+const btnBurgerIcoUpper = document.querySelector(
+  ".nav-bar__menu__burger__ico-upper"
+);
+const btnBurgerIcoCenter = document.querySelector(
+  ".nav-bar__menu__burger__ico-center"
+);
+const btnBurgerIcoBottom = document.querySelector(
+  ".nav-bar__menu__burger__ico-bottom"
+);
+const menuList = document.querySelector(".nav-bar__menu__list");
+const allInfo = document.querySelectorAll(".header__info");
+const moveLeft = document.querySelector(".header__infos__move:nth-child(1)");
+const moveRight = document.querySelector(".header__infos__move:nth-child(2)");
 
+btnBurger.addEventListener("click", () => {
+  btnBurgerIcoUpper.classList.toggle("active");
+  btnBurgerIcoCenter.classList.toggle("active");
+  btnBurgerIcoBottom.classList.toggle("active");
+  menuList.classList.toggle("nav-bar__menu__list--active");
 
-const allInfo = document.querySelectorAll('.header__info');
-// console.log(document.querySelectorAll('.header__info')[1].style.opacity = '1')
-
-const moveLeft = document.querySelector('.header__infos__move:nth-child(1)');
-const moveRight = document.querySelector('.header__infos__move:nth-child(2)');
-
-btnBurger.addEventListener('click', () => {
-  btnBurgerIcoUpper.classList.toggle('active')
-  btnBurgerIcoCenter.classList.toggle('active');
-  btnBurgerIcoBottom.classList.toggle('active');
-  menuList.classList.toggle('nav-bar__menu__list--active');
-
-  console.log(btnBurger.classList)
-})
+  console.log(btnBurger.classList);
+});
 let moveCounter = 1;
 
 let counter = 0;
-allInfo[0].style.opacity = '1';
+allInfo[0].style.opacity = "1";
 
-moveLeft.addEventListener('click', () => {
-  counter <= 0 ? counter = 2 : counter--;
-  allInfo.forEach(info => info.style.opacity = '0')
-  allInfo[counter].style.opacity = '1';
+moveLeft.addEventListener("click", () => {
+  counter <= 0 ? (counter = 2) : counter--;
+  allInfo.forEach((info) => (info.style.opacity = "0"));
+  allInfo[counter].style.opacity = "1";
   console.log(counter);
+});
+moveRight.addEventListener("click", () => {
+  counter >= 2 ? (counter = 0) : counter++;
+  allInfo.forEach((info) => (info.style.opacity = "0"));
+  allInfo[counter].style.opacity = "1";
+  console.log(counter);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024 && allInfo[0].style.opacity !== "1") {
+    allInfo.forEach((info) => {
+      info.style.opacity = "1";
+    });
+  }
+});
+
+// --->>> Slider with customer comments <<<--- //
+const commentWrapper = document.querySelector('.comments-slider__wrapper');
+const commentsList = document.querySelectorAll('.comments-slider__wrapper__text');
+const leftBtn = document.querySelector('.comments-slider__btn--left');
+const rightBtn = document.querySelector('.comments-slider__btn--right');
+const commentsListSize = commentsList[0].clientWidth;
+let counterLsit = 1;
+
+commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
+
+rightBtn.addEventListener('click', () => {
+  if (counterLsit >= commentsList.length - 1) return;
+  commentWrapper.style.transition = '1s ease-in-out';
+  counterLsit++;
+  commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
 })
-moveRight.addEventListener('click', () => {
-  counter >= 2 ? counter = 0 : counter++;
-  allInfo.forEach(info => info.style.opacity = '0')
-  allInfo[counter].style.opacity = '1';
-  console.log(counter);
+leftBtn.addEventListener('click', () => {
+  if (counterLsit <= 0) return;
+  commentWrapper.style.transition = 'transform 0.5s ease-in-out';
+  counterLsit--;
+  commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
 })
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 1024 && allInfo[0].style.opacity !== '1') {
-    allInfo.forEach(info => {info.style.opacity = '1'})
+commentWrapper.addEventListener('transitionend', () => {
+  if (commentsList[counterLsit].id === 'lastClone') {
+    commentWrapper.style.transition = 'none';
+    counterLsit = commentsList.length - 2;
+    commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
+  }
+  if (commentsList[counterLsit].id === 'firstClone') {
+    commentWrapper.style.transition = 'none';
+    counterLsit = commentsList.length - counterLsit;
+    commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
   }
 })

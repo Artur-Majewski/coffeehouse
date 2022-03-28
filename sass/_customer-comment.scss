@@ -1,0 +1,185 @@
+.comments-slider {
+  height: 65vh;
+  background-image: url('../images/client-comments_1800x700BW.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mediaQueries(smartphone, portrait) {
+    height: 50vh;
+  }
+
+  @include mediaQueries(smartphone-large, portrait) {
+    height: 40vh;
+  }
+
+  @include mediaQueries(tablet-medium, portrait) {
+    height: 30vh;
+  }
+
+  @include mediaQueries(tablet-large, landscape) {
+    height: 50vh;
+  }
+
+  @include mediaQueries(desktop-medium, landscape) {
+    height: 40vh;
+  }
+
+
+  &__comment {
+    height: 65vh;
+    padding: 0 auto;
+    background-color: rgba(#000, 0.7);
+
+    @include mediaQueries(smartphone, portrait) {
+      height: 50vh;
+    }
+
+    @include mediaQueries(smartphone-large, portrait) {
+      height: 40vh;
+    }
+
+    @include mediaQueries(tablet-medium, portrait) {
+      height: 30vh;
+    }
+
+    @include mediaQueries(tablet-large, landscape) {
+      height: 50vh;
+    }
+
+    @include mediaQueries(desktop-medium, landscape) {
+      height: 40vh;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1280px;
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    color: rgb(245, 209, 173);
+
+    @include mediaQueries(smartphone-large, portrait) {
+      font-size: 2rem;
+    }
+
+    @include mediaQueries(tablet, portrait) {
+      font-size: 3rem;
+    }
+
+    @include mediaQueries(tablet-medium, landscape) {
+      font-size: 2.5rem;
+    }
+
+    @include mediaQueries(desktop-small, landscape) {
+      top: 15%;
+    }
+
+    @include mediaQueries(desktop-medium, landscape) {
+      font-size: 3.5rem;
+      top: 10%;
+    }
+
+  }
+
+  &__box {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 80%;
+    height: 65vh;
+    overflow: hidden;
+
+    @include mediaQueries(smartphone, portrait) {
+      height: 50vh;
+    }
+
+    @include mediaQueries(smartphone-large, portrait) {
+      height: 40vh;
+    }
+
+    @include mediaQueries(tablet-medium, portrait) {
+      height: 30vh;
+    }
+
+    @include mediaQueries(tablet-large, landscape) {
+      height: 50vh;
+    }
+
+    @include mediaQueries(desktop-medium, landscape) {
+      height: 40vh;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &__text {
+      flex-shrink: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.6rem;
+      color: white;
+
+      @include mediaQueries(smartphone, portrait) {
+        font-size: 1.8rem;
+      }
+
+      @include mediaQueries(smartphone-large, portrait) {
+        font-size: 2.2rem;
+      }
+
+      @include mediaQueries(tablet, portrait) {
+        font-size: 2.2rem;
+      }
+
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.9rem;
+      }
+
+      @include mediaQueries(desktop-medium, landscape) {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    display: block;
+    top: calc(50% - 45px);
+
+    font-size: 5rem;
+    color: white;
+
+    &--left {
+      left: 5%;
+      transform: translateX(-50%)
+    }
+
+    &--right {
+      right: 5%;
+      transform: translateX(+50%);
+    }
+
+    @include mediaQueries(desktop-medium, landscape) {
+      &--left {
+        left: 12%;
+        transform: translateX(-50%)
+      }
+
+      &--right {
+        right: 12%;
+        transform: translateX(+50%);
+      }
+    }
+  }
+}
