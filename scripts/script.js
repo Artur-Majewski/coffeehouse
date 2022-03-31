@@ -48,37 +48,66 @@ window.addEventListener("resize", () => {
 });
 
 // --->>> Slider with customer comments <<<--- //
-const commentWrapper = document.querySelector('.comments-slider__wrapper');
-const commentsList = document.querySelectorAll('.comments-slider__wrapper__text');
-const leftBtn = document.querySelector('.comments-slider__btn--left');
-const rightBtn = document.querySelector('.comments-slider__btn--right');
+const commentWrapper = document.querySelector(".comments-slider__wrapper");
+const commentsList = document.querySelectorAll(
+  ".comments-slider__wrapper__text"
+);
+const leftBtn = document.querySelector(".comments-slider__btn--left");
+const rightBtn = document.querySelector(".comments-slider__btn--right");
 const commentsListSize = commentsList[0].clientWidth;
 let counterLsit = 1;
 
-commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
+commentWrapper.style.transform = `translateX(${
+  -commentsListSize * counterLsit
+}px)`;
 
-rightBtn.addEventListener('click', () => {
+rightBtn.addEventListener("click", () => {
   if (counterLsit >= commentsList.length - 1) return;
-  commentWrapper.style.transition = '1s ease-in-out';
+  commentWrapper.style.transition = "1s ease-in-out";
   counterLsit++;
-  commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
-})
-leftBtn.addEventListener('click', () => {
+  commentWrapper.style.transform = `translateX(${
+    -commentsListSize * counterLsit
+  }px)`;
+});
+leftBtn.addEventListener("click", () => {
   if (counterLsit <= 0) return;
-  commentWrapper.style.transition = 'transform 0.5s ease-in-out';
+  commentWrapper.style.transition = "transform 0.5s ease-in-out";
   counterLsit--;
-  commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
-})
+  commentWrapper.style.transform = `translateX(${
+    -commentsListSize * counterLsit
+  }px)`;
+});
 
-commentWrapper.addEventListener('transitionend', () => {
-  if (commentsList[counterLsit].id === 'lastClone') {
-    commentWrapper.style.transition = 'none';
+commentWrapper.addEventListener("transitionend", () => {
+  if (commentsList[counterLsit].id === "lastClone") {
+    commentWrapper.style.transition = "none";
     counterLsit = commentsList.length - 2;
-    commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
+    commentWrapper.style.transform = `translateX(${
+      -commentsListSize * counterLsit
+    }px)`;
   }
-  if (commentsList[counterLsit].id === 'firstClone') {
-    commentWrapper.style.transition = 'none';
+  if (commentsList[counterLsit].id === "firstClone") {
+    commentWrapper.style.transition = "none";
     counterLsit = commentsList.length - counterLsit;
-    commentWrapper.style.transform = `translateX(${-commentsListSize * counterLsit}px)`;
+    commentWrapper.style.transform = `translateX(${
+      -commentsListSize * counterLsit
+    }px)`;
   }
-})
+});
+
+// --->>> Section with events <<<--- //
+// Set width of picture in box event
+document.querySelectorAll(".events__event__picture").forEach((picture) => {
+  picture.style.height = `${document.querySelector(".events__event").clientWidth * 0.75}px`;
+});
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".events__event__picture").forEach((picture) => {
+    picture.style.height = `${document.querySelector(".events__event").clientWidth * 0.75}px`;
+  });
+}); 
+
+// Set height of box event
+let maxHeight = 0;
+document.querySelectorAll('.events__event').forEach(singleEvent => singleEvent.clientHeight > maxHeight ? maxHeight = singleEvent.clientHeight : null)
+document.querySelectorAll('.events__event').forEach(singleEvent => singleEvent.style.height = `${maxHeight}px`)

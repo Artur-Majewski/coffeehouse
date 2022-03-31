@@ -1,5 +1,5 @@
 .comments-slider {
-  height: 65vh;
+  height: 360px;
   background-image: url('../images/client-comments_1800x700BW.jpg');
   background-position: center center;
   background-attachment: fixed;
@@ -8,19 +8,22 @@
   background-size: cover;
 
   @include mediaQueries(smartphone, portrait) {
-    height: 50vh;
+    height: 360px;
   }
 
-  @include mediaQueries(smartphone-large, portrait) {
-    height: 40vh;
+  @include mediaQueries(smartphone-large, landscape) {
+    height: 240px;
   }
+  // @include mediaQueries(smartphone-large, portrait) {
+  //   height: 40vh;
+  // }
 
   @include mediaQueries(tablet-medium, portrait) {
     height: 30vh;
   }
 
   @include mediaQueries(tablet-large, landscape) {
-    height: 50vh;
+    height: 300px;
   }
 
   @include mediaQueries(desktop-medium, landscape) {
@@ -29,16 +32,16 @@
 
 
   &__comment {
-    height: 65vh;
+    height: 360px;
     padding: 0 auto;
     background-color: rgba(#000, 0.7);
 
     @include mediaQueries(smartphone, portrait) {
-      height: 50vh;
+      height: 360px;
     }
 
-    @include mediaQueries(smartphone-large, portrait) {
-      height: 40vh;
+    @include mediaQueries(smartphone-large, landscape) {
+      height: 240px;
     }
 
     @include mediaQueries(tablet-medium, portrait) {
@@ -46,7 +49,7 @@
     }
 
     @include mediaQueries(tablet-large, landscape) {
-      height: 50vh;
+      height: 300px;
     }
 
     @include mediaQueries(desktop-medium, landscape) {
@@ -56,29 +59,33 @@
 
   &__title {
     position: absolute;
-    top: 7%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
     max-width: 1280px;
     width: 100%;
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: rgb(245, 209, 173);
-
-    @include mediaQueries(smartphone-large, portrait) {
-      font-size: 2rem;
+    font-family: 'Merriweather', sans-serif;
+    font-style: italic;
+    
+    @include mediaQueries(smartphone-large, landscape) {
+      top: 5%;
     }
 
     @include mediaQueries(tablet, portrait) {
-      font-size: 3rem;
+      top: 5%;
+      font-size: 2.8rem;
     }
 
     @include mediaQueries(tablet-medium, landscape) {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     @include mediaQueries(desktop-small, landscape) {
-      top: 15%;
+      font-size: 2.5rem;
+      top: 10%;
     }
 
     @include mediaQueries(desktop-medium, landscape) {
@@ -91,16 +98,16 @@
   &__box {
     max-width: 1280px;
     margin: 0 auto;
-    width: 80%;
-    height: 65vh;
+    width: 75%;
+    height: 440px;
     overflow: hidden;
 
     @include mediaQueries(smartphone, portrait) {
-      height: 50vh;
+      height: 400px;
     }
 
-    @include mediaQueries(smartphone-large, portrait) {
-      height: 40vh;
+    @include mediaQueries(smartphone-large, landscape) {
+      height: 280px;
     }
 
     @include mediaQueries(tablet-medium, portrait) {
@@ -108,9 +115,11 @@
     }
 
     @include mediaQueries(tablet-large, landscape) {
-      height: 50vh;
+      height: 300px;
     }
-
+    @include mediaQueries(desktop-small, landscape) {
+      height: 320px;
+    }
     @include mediaQueries(desktop-medium, landscape) {
       height: 40vh;
     }
@@ -127,11 +136,14 @@
       display: flex;
       align-items: center;
       text-align: center;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: white;
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      word-spacing: 4px;
 
       @include mediaQueries(smartphone, portrait) {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
       }
 
       @include mediaQueries(smartphone-large, portrait) {
@@ -139,15 +151,19 @@
       }
 
       @include mediaQueries(tablet, portrait) {
-        font-size: 2.2rem;
+        font-size: 2.0rem;
       }
 
       @include mediaQueries(tablet-medium, landscape) {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
       }
 
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 1.8rem;
+        top: 10%;
+      }
       @include mediaQueries(desktop-medium, landscape) {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
     }
   }
@@ -161,12 +177,12 @@
     color: white;
 
     &--left {
-      left: 5%;
+      left: 7%;
       transform: translateX(-50%)
     }
 
     &--right {
-      right: 5%;
+      right: 7%;
       transform: translateX(+50%);
     }
 
