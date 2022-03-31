@@ -28,7 +28,7 @@
   justify-content: space-around;
   align-content: space-evenly;
 
-  @include mediaQueries(tablet, portrait) {
+  @include mediaQueries(tablet-small, portrait) {
     flex-direction: row;
   }
 
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
 
-    @include mediaQueries(tablet, portrait) {
+    @include mediaQueries(tablet-small, portrait) {
       padding: 2.5%;
     }
 
@@ -66,7 +66,7 @@
         font-size: 1.4rem;
       }
 
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 1.3rem;
       }
 
@@ -103,7 +103,7 @@
         font-size: 1.4rem;
       }
 
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 1.3rem;
       }
 
@@ -149,7 +149,7 @@
           font-size: 1.4rem;
         }
 
-        @include mediaQueries(tablet, portrait) {
+        @include mediaQueries(tablet-small, portrait) {
           font-size: 1.3rem;
         }
 
@@ -169,7 +169,7 @@
       &__date {
         color: rgb(245, 209, 173);
 
-        @include mediaQueries(tablet, portrait) {
+        @include mediaQueries(tablet-small, portrait) {
           font-size: 1.1rem;
         }
       }

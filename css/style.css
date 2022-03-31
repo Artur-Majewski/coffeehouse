@@ -22,6 +22,80 @@ body {
   background-color: #e2e2e2;
 }
 
+.grid-wrapper__btnUp {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  width: 65px;
+  height: 65px;
+  border-style: none;
+  border-radius: 50%;
+  background-color: #f5d1ad;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+@media (min-width: 360px) and (orientation: portrait) {
+  .grid-wrapper__btnUp {
+    bottom: 2%;
+  }
+}
+
+.grid-wrapper__btnUp:hover {
+  background-color: #e2e2e2;
+}
+
+.grid-wrapper__btnUp i {
+  font-size: 2.5rem;
+  color: #683718;
+  text-shadow: 0 12px 0, 0 -12px 0;
+  -webkit-transform: translateY(65px);
+          transform: translateY(65px);
+  -webkit-animation: arrowUp 5s infinite linear;
+          animation: arrowUp 5s infinite linear;
+}
+
+@-webkit-keyframes arrowUp {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  15% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  85% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+}
+
+@keyframes arrowUp {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  15% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  85% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+}
+
 .nav-bar {
   position: fixed;
   width: 100%;
@@ -240,17 +314,17 @@ body {
   overflow-y: hidden;
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
+@media (min-width: 640px) and (orientation: landscape) {
   .header {
-    background-image: url("../images/coffee_header_1920.jpg");
+    background-image: url("../images/coffee_header_1200x600.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 
-@media (min-width: 640px) and (orientation: landscape) {
+@media (min-width: 1024px) and (orientation: landscape) {
   .header {
-    background-image: url("../images/coffee_header_1200x600.jpg");
+    background-image: url("../images/coffee_header_1920.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -315,10 +389,10 @@ body {
     border-bottom: calc((100vh - 100px) * 0.1125) solid transparent;
   }
   .header__infos__move:nth-child(1) {
-    left: 2%;
+    left: 3%;
   }
   .header__infos__move:nth-child(2) {
-    right: 2%;
+    right: 3%;
   }
 }
 
@@ -336,11 +410,9 @@ body {
 @media (min-width: 768px) and (orientation: landscape) {
   .header__infos__move:nth-child(1) {
     border-right: 50px solid rgba(150, 150, 150, 0.5);
-    left: 7%;
   }
   .header__infos__move:nth-child(2) {
     border-left: 50px solid rgba(150, 150, 150, 0.5);
-    right: 7%;
   }
 }
 
@@ -353,7 +425,7 @@ body {
 .header__info {
   position: absolute;
   width: 100%;
-  height: calc((100vh - 100px) * 0.38);
+  height: 255px;
   background-color: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
           box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
@@ -364,13 +436,13 @@ body {
 
 @media (min-width: 410px) and (orientation: portrait) {
   .header__info {
-    height: calc((100vh - 100px) * 0.37);
+    height: 295px;
   }
 }
 
 @media (min-width: 640px) and (orientation: landscape) {
   .header__info {
-    height: calc((100vh - 100px) * 0.45);
+    height: 140px;
     width: 90%;
     margin-left: 5%;
   }
@@ -378,14 +450,20 @@ body {
 
 @media (min-width: 768px) and (orientation: portrait) {
   .header__info {
-    height: calc((100vh - 100px) * 0.32);
     width: 80%;
     margin-left: 10%;
   }
 }
 
+@media (min-width: 800px) and (orientation: portrait) {
+  .header__info {
+    height: 350px;
+  }
+}
+
 @media (min-width: 1024px) and (orientation: landscape) {
   .header__info {
+    height: 290px;
     position: static;
     width: calc((100% - 10%)/ 3);
     max-width: calc(1280px / 3);
@@ -417,7 +495,7 @@ body {
 @media (min-width: 640px) and (orientation: landscape) {
   .header__info__title {
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -442,6 +520,7 @@ body {
 @media (min-width: 800px) and (orientation: portrait) {
   .header__info__title {
     font-size: 2.8rem;
+    line-height: 4rem;
   }
 }
 
@@ -487,7 +566,7 @@ body {
 
 @media (min-width: 800px) and (orientation: portrait) {
   .header__info__content {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -681,7 +760,6 @@ body {
 @media (min-width: 1280px) and (orientation: landscape) {
   .article__text {
     width: 75%;
-    padding: 0 15px;
   }
 }
 
@@ -691,6 +769,7 @@ body {
   font-size: 1.5rem;
   font-family: 'Roboto', sans-serif;
   font-style: italic;
+  padding-top: 10px;
 }
 
 @media (min-width: 410px) and (orientation: portrait) {
@@ -1076,12 +1155,6 @@ body {
   font-family: 'Merriweather', sans-serif;
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
-  .events__title {
-    font-size: 2.2rem;
-  }
-}
-
 @media (min-width: 768px) and (orientation: portrait) {
   .events__title {
     font-size: 2.4rem;
@@ -1091,6 +1164,12 @@ body {
 @media (min-width: 800px) and (orientation: portrait) {
   .events__title {
     font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .events__title {
+    font-size: 2.2rem;
   }
 }
 
@@ -1147,21 +1226,15 @@ body {
   }
 }
 
-@media (min-width: 800px) and (orientation: landscape) {
-  .events__event__title {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 1024px) and (orientation: landscape) {
-  .events__event__title {
-    font-size: 1.8rem;
-  }
-}
-
 @media (min-width: 768px) and (orientation: portrait) {
   .events__event__title {
     font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) and (min-width: 800px) and (orientation: landscape) {
+  .events__event__title {
+    font-size: 1.6rem;
   }
 }
 

@@ -13,7 +13,7 @@
       font-size: 1.8rem;
     }
 
-    @include mediaQueries(tablet, portrait) {
+    @include mediaQueries(tablet-small, portrait) {
       font-size: 2.4rem;
     }
 
@@ -55,7 +55,7 @@
     }
   }
 
-  @include mediaQueries(tablet, portrait) {
+  @include mediaQueries(tablet-small, portrait) {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -75,7 +75,7 @@
     @include mediaQueries(tablet-medium, landscape) {
       width: 25%;
     }
-    @include mediaQueries(tablet, portrait) {
+    @include mediaQueries(tablet-small, portrait) {
       width: 40%;
     }
     @include mediaQueries(tablet-medium, portrait) {
@@ -107,7 +107,7 @@
     @include mediaQueries(tablet-medium, landscape) {
       width: 65%;
     }
-    @include mediaQueries(tablet, portrait) {
+    @include mediaQueries(tablet-small, portrait) {
       width: 60%;
       padding: 0 25px;
     }
@@ -120,7 +120,6 @@
     }
     @include mediaQueries(desktop-small, landscape) {
       width: 75%;
-      padding: 0 15px;
     }
 
     &__title {
@@ -129,11 +128,11 @@
       font-size: 1.5rem;
       font-family: 'Roboto', sans-serif;
       font-style: italic;
-
+      padding-top: 10px;
       @include mediaQueries(smartphone, portrait) {
         font-size: 1.6rem;
       }
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 1.8rem;
       }
       @include mediaQueries(tablet-medium, landscape) {
@@ -158,7 +157,7 @@
       @include mediaQueries(smartphone, portrait) {
         font-size: 1.4rem;
       }
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 1.4rem;
       }
       @include mediaQueries(tablet-medium, landscape) {
@@ -173,7 +172,7 @@
         font-size: 1.5rem;
       }
 
-      // @include mediaQueries(tablet, landscape) {
+      // @include mediaQueries(tablet-small, landscape) {
       //   width: 50%;
       // }
 

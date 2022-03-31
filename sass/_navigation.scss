@@ -38,7 +38,7 @@
       text-align: left;
     }
 
-    @include mediaQueries(tablet) {
+    @include mediaQueries(tablet-small) {
       font-size: 3rem;
     }
 

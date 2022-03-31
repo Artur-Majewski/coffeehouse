@@ -74,7 +74,7 @@
       top: 5%;
     }
 
-    @include mediaQueries(tablet, portrait) {
+    @include mediaQueries(tablet-small, portrait) {
       top: 5%;
       font-size: 2.8rem;
     }
@@ -150,7 +150,7 @@
         font-size: 2.2rem;
       }
 
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 2.0rem;
       }
 

@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow-y: hidden;
+  
+  @include mediaQueries(smartphone-large, landscape) {
+    background-image: url('../images/coffee_header_1200x600.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   @include mediaQueries(tablet-large, landscape) {
     background-image: url('../images/coffee_header_1920.jpg');
@@ -13,11 +19,7 @@
     background-size: cover;
   }
 
-  @include mediaQueries(smartphone-large, landscape) {
-    background-image: url('../images/coffee_header_1200x600.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+ 
 
   &__infos {
     display: flex;
@@ -62,15 +64,15 @@
         border-bottom: calc((100vh - 100px) * 0.1125) solid transparent;
 
         &:nth-child(1) {
-          left: 2%;
+          left: 3%;
         }
 
         &:nth-child(2) {
-          right: 2%;
+          right: 3%;
         }
       }
 
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         &:nth-child(1) {
           border-right: 50px solid rgba(150, 150, 150, 0.5);
           left: 8%;
@@ -82,15 +84,13 @@
         }
       }
 
-      @include mediaQueries(tablet, landscape) {
+      @include mediaQueries(tablet-small, landscape) {
         &:nth-child(1) {
           border-right: 50px solid rgba(150, 150, 150, 0.5);
-          left: 7%;
         }
 
         &:nth-child(2) {
           border-left: 50px solid rgba(150, 150, 150, 0.5);
-          right: 7%;
         }
       }
 
@@ -104,34 +104,32 @@
   &__info {
     position: absolute;
     width: 100%;
-    height: calc((100vh - 100px) * 0.38);
+    height: 255px;
     background-color: rgba($color: white, $alpha: 0.8);
     box-shadow: 0 0 20px 10px rgba($color: white, $alpha: 0.8);
     opacity: 0;
     transition: 1s;
 
-    @include mediaQueries(smartphone) {
-      height: calc((100vh - 100px) * 0.37);
+    @include mediaQueries(smartphone, portrait) {
+      height: 295px;
     }
 
     @include mediaQueries(smartphone-large, landscape) {
-      height: calc((100vh - 100px) * 0.45);
+      height: 140px;
       width: 90%;
       margin-left: 5%;
     }
 
-    // @include mediaQueries(tablet, landscape) {
-    //   width: 80%;
-    //   margin-left: 10%;
-    // }
-
-    @include mediaQueries(tablet, portrait) {
-      height: calc((100vh - 100px) * 0.32);
+    @include mediaQueries(tablet-small, portrait) {
       width: 80%;
       margin-left: 10%;
     }
+    @include mediaQueries(tablet-medium, portrait) {
+      height: 350px;
+    }
 
     @include mediaQueries(tablet-large, landscape) {
+      height: 290px;
       position: static;
       width: calc((100% - 10%)/ 3);
       max-width: calc(1280px / 3);
@@ -159,14 +157,14 @@
 
       @include mediaQueries(smartphone-large, landscape) {
         font-size: 1.5rem;
-        line-height: 2rem;
+        line-height: 2.5rem;
       }
 
       @include mediaQueries(smartphone, portrait) {
         font-size: 1.8rem;
       }
 
-      @include mediaQueries(tablet, landscape) {
+      @include mediaQueries(tablet-small, landscape) {
         font-size: 1.6rem;
       }
 
@@ -176,6 +174,7 @@
 
       @include mediaQueries(tablet-medium, portrait) {
         font-size: 2.8rem;
+        line-height: 4rem;
       }
 
       @include mediaQueries(desktop-small, landscape) {
@@ -200,16 +199,16 @@
         padding-right: 10%;
       }
 
-      @include mediaQueries(tablet, portrait) {
+      @include mediaQueries(tablet-small, portrait) {
         font-size: 1.7rem;
       }
 
-      @include mediaQueries(tablet, landscape) {
+      @include mediaQueries(tablet-small, landscape) {
         font-size: 1.15rem;
       }
 
       @include mediaQueries(tablet-medium, portrait) {
-        font-size: 2.1rem;
+        font-size: 1.9rem;
       }
 
       @include mediaQueries(tablet-medium, landscape) {

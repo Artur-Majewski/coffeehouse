@@ -98,16 +98,45 @@ commentWrapper.addEventListener("transitionend", () => {
 // --->>> Section with events <<<--- //
 // Set width of picture in box event
 document.querySelectorAll(".events__event__picture").forEach((picture) => {
-  picture.style.height = `${document.querySelector(".events__event").clientWidth * 0.75}px`;
+  picture.style.height = `${
+    document.querySelector(".events__event").clientWidth * 0.75
+  }px`;
 });
 
 window.addEventListener("resize", () => {
   document.querySelectorAll(".events__event__picture").forEach((picture) => {
-    picture.style.height = `${document.querySelector(".events__event").clientWidth * 0.75}px`;
+    picture.style.height = `${
+      document.querySelector(".events__event").clientWidth * 0.75
+    }px`;
   });
-}); 
+});
 
 // Set height of box event
 let maxHeight = 0;
-document.querySelectorAll('.events__event').forEach(singleEvent => singleEvent.clientHeight > maxHeight ? maxHeight = singleEvent.clientHeight : null)
-document.querySelectorAll('.events__event').forEach(singleEvent => singleEvent.style.height = `${maxHeight}px`)
+document
+  .querySelectorAll(".events__event")
+  .forEach((singleEvent) =>
+    singleEvent.clientHeight > maxHeight
+      ? (maxHeight = singleEvent.clientHeight)
+      : null
+  );
+document
+  .querySelectorAll(".events__event")
+  .forEach((singleEvent) => (singleEvent.style.height = `${maxHeight}px`));
+
+// Scroll BTN
+const btnScroll = document.querySelector(".grid-wrapper__btnUp");
+btnScroll.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+  if (window.scrollY > window.innerHeight - 100) {
+    btnScroll.style.opacity = 1;
+    btnScroll.style.zIndex= 10;
+  } else {
+    btnScroll.style.opacity = 0;
+    btnScroll.style.zIndex= 0;
+  }
+});
