@@ -47,26 +47,38 @@ window.addEventListener("resize", () => {
 });
 
 // --->>> Set height of box info <<<--- //
+const moveBtnsInfo = document.querySelectorAll('.header__infos__move');
 let maxHeightInfoDiv = 0;
-allInfo.forEach((singleDiv) => (
-  singleDiv.clientHeight > maxHeightInfoDiv
-      ? (maxHeightInfoDiv = singleDiv.clientHeight)
-      : null
-));
-allInfo.forEach((singleDiv) => {
-  singleDiv.style.height = `${maxHeightInfoDiv}px`
-});
 
+const setStyleForDivInfo = () => {
+  allInfo.forEach((singleDiv) => (
+    singleDiv.clientHeight > maxHeightInfoDiv
+        ? (maxHeightInfoDiv = singleDiv.clientHeight)
+        : null
+  ));
+  allInfo.forEach((singleDiv) => {
+    singleDiv.style.height = `${maxHeightInfoDiv}px`
+  });
+  
+  moveBtnsInfo.forEach( singleDiv => {
+    singleDiv.style.height = `${maxHeightInfoDiv * 0.5}px`
+    singleDiv.style.marginBottom = `${maxHeightInfoDiv * 0.25}px`
+    singleDiv.style.borderTop = `${maxHeightInfoDiv * 0.25}px solid transparent`
+    singleDiv.style.borderBottom = `${maxHeightInfoDiv * 0.25}px solid transparent`
+  })
+}
 
-moveLeft.style.height = `${maxHeightInfoDiv * 0.5}px`
-moveLeft.style.marginBottom = `${maxHeightInfoDiv * 0.25}px`
-moveLeft.style.borderTop = `${maxHeightInfoDiv * 0.25}px solid transparent`
-moveLeft.style.borderBottom = `${maxHeightInfoDiv * 0.25}px solid transparent`
+setStyleForDivInfo()
 
-moveRight.style.height = `${maxHeightInfoDiv * 0.5}px`
-moveRight.style.marginBottom = `${maxHeightInfoDiv * 0.25}px`
-moveRight.style.borderTop = `${maxHeightInfoDiv * 0.25}px solid transparent`
-moveRight.style.borderBottom = `${maxHeightInfoDiv * 0.25}px solid transparent`
+window.addEventListener("resize", () => {
+  maxHeightInfoDiv = 0;
+
+  allInfo.forEach((singleDiv) => {
+    singleDiv.style.height = 'auto'
+  });
+  
+  setStyleForDivInfo();
+})
 
 // --->>> Slider with customer comments <<<--- //
 const commentWrapper = document.querySelector(".comments-slider__wrapper");
