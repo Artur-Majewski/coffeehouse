@@ -138,7 +138,10 @@ window.addEventListener("scroll", () => {
 });
 
 ///////////////////////
+const homeButton = document.querySelector('.nav-bar__menu__item:nth-child(1)');
 const menuButton = document.querySelector('.nav-bar__menu__item:nth-child(2)');
+const aboutButton = document.querySelector('.nav-bar__menu__item:nth-child(3)');
+
 const menuArticle = document.querySelector(".menu");
 const menuItemLists = document.querySelectorAll(".context__menu");
 const itemList = document.querySelectorAll(".context__menu__list");
@@ -190,5 +193,18 @@ btnMenuNext.addEventListener("click", () => {
 
 menuButton.addEventListener('click', () => {
   menuArticle.classList.toggle('menu--active');
+  menuList.classList.toggle("nav-bar__menu__list--active");
+})
+
+homeButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  menuArticle.classList.remove('menu--active');
+  menuList.classList.toggle("nav-bar__menu__list--active");
+})
+
+aboutButton.addEventListener('click', () => {
+  const distFromTop = document.querySelector('.about__title').offsetTop;
+  window.scrollTo({ top: (distFromTop - 100), behavior: "smooth" });
+  menuArticle.classList.remove('menu--active');
   menuList.classList.toggle("nav-bar__menu__list--active");
 })

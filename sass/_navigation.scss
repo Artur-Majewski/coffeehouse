@@ -93,6 +93,8 @@
       background-color: $bgcNavDefault;
       cursor: pointer;
 
+      
+
       @include mediaQueries(tablet-large, landscape) {
         position: relative;
         top: auto;
@@ -131,11 +133,16 @@
 
         &:hover::before {
           border-left: 1rem solid black;
+          & .active{
+            border-left: 1rem solid black;
+          }
         }
 
         &:hover::after {
           border-right: 1rem solid black;
         }
+
+        
       }
     }
 

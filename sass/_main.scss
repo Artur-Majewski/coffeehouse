@@ -155,13 +155,13 @@
       font-family: 'Roboto', sans-serif;
 
       @include mediaQueries(smartphone, portrait) {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
       @include mediaQueries(tablet-small, portrait) {
         font-size: 1.4rem;
       }
       @include mediaQueries(tablet-medium, landscape) {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       @include mediaQueries(tablet-medium, portrait) {

@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow-y: hidden;
-  
+
   @include mediaQueries(smartphone-large, landscape) {
     background-image: url('../images/coffee_header_1200x600.jpg');
     background-repeat: no-repeat;
@@ -19,7 +19,121 @@
     background-size: cover;
   }
 
- 
+  &__slogan {
+    position: absolute;
+    width: 100%;
+    top: calc(100px + 5%);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+
+    @include mediaQueries(smartphone-large, landscape) {
+      width: 35%;
+      left: 83%;
+      top: calc(100px + 1%);
+      top: calc(100px + 5%);
+    }
+
+    @include mediaQueries(tablet-large, landscape) {
+      width: 100%;
+      left: 50%;
+    }
+
+    & i {
+      position: relative;
+      top: -5px;
+      height: rem;
+      font-size: 0.5rem;
+      line-height: 1rem;
+
+      @include mediaQueries(tablet-small, portrait) {
+        top: -10px;
+        font-size: 0.8rem;
+      }
+
+      @include mediaQueries(desktop-small, landscape) {
+        top: -7.5px;
+        font-size: 0.8rem;
+      }
+
+      @include mediaQueries(desktop-medium, landscape) {
+        top: -15px;
+        font-size: 1.1rem;
+      }
+    }
+
+
+    & h1 {
+      @include mediaQueries(tablet-small, portrait) {
+        font-size: 3.5rem;
+      }
+      @include mediaQueries(tablet-large, landscape) {
+        font-size: 2.5rem;
+      }
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 3.5rem;
+      }
+      @include mediaQueries(desktop-medium, landscape) {
+        font-size: 5rem;
+      }
+    }
+
+    & h2:nth-of-type(1) {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      @include mediaQueries(smartphone-large, landscape) {
+        text-shadow: 1px 1px #000;
+        font-size: 1rem;
+      }
+
+      @include mediaQueries(tablet-small, portrait) {
+        font-size: 2.5rem;
+      }
+
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.2rem;
+      }
+
+      @include mediaQueries(tablet-large, landscape) {
+        font-size: 1.5rem;
+      }
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 2rem;
+      }
+      @include mediaQueries(desktop-medium, landscape) {
+        font-size: 3.5rem;
+      }
+    }
+
+    & h2:nth-of-type(2) {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      font-family: 'Merriweather', sans-serif;
+
+      @include mediaQueries(smartphone-large, landscape) {
+        text-shadow: 1px 1px #000;
+        font-size: 1rem;
+      }
+      @include mediaQueries(tablet-small, portrait) {
+        font-size: 1.8rem;
+      }
+      @include mediaQueries(tablet-medium, landscape) {
+        font-size: 1.2rem;
+      }
+      @include mediaQueries(desktop-small, landscape) {
+        font-size: 1.7rem;
+      }
+      @include mediaQueries(desktop-medium, landscape) {
+        font-size: 2.5rem;
+      }
+    }
+
+  }
 
   &__infos {
     display: flex;
@@ -124,6 +238,7 @@
       width: 80%;
       margin-left: 10%;
     }
+
     @include mediaQueries(tablet-medium, portrait) {
       height: 350px;
     }
@@ -168,7 +283,7 @@
         font-size: 1.6rem;
       }
 
-      @include mediaQueries(tablet-large, landscape){
+      @include mediaQueries(tablet-large, landscape) {
         line-height: 2.5rem;
       }
 

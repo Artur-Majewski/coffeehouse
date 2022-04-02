@@ -261,6 +261,9 @@ body {
   .nav-bar__menu__item:hover::before {
     border-left: 1rem solid black;
   }
+  .nav-bar__menu__item:hover::before .active {
+    border-left: 1rem solid black;
+  }
   .nav-bar__menu__item:hover::after {
     border-right: 1rem solid black;
   }
@@ -327,6 +330,176 @@ body {
     background-image: url("../images/coffee_header_1920.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+.header__slogan {
+  position: absolute;
+  width: 100%;
+  top: calc(100px + 5%);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  text-align: center;
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .header__slogan {
+    width: 35%;
+    left: 83%;
+    top: calc(100px + 1%);
+    top: calc(100px + 5%);
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__slogan {
+    width: 100%;
+    left: 50%;
+  }
+}
+
+.header__slogan i {
+  position: relative;
+  top: -5px;
+  height: rem;
+  font-size: 0.5rem;
+  line-height: 1rem;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .header__slogan i {
+    top: -10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .header__slogan i {
+    top: -7.5px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1680px) and (orientation: landscape) {
+  .header__slogan i {
+    top: -15px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .header__slogan h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__slogan h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .header__slogan h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1680px) and (orientation: landscape) {
+  .header__slogan h1 {
+    font-size: 5rem;
+  }
+}
+
+.header__slogan h2:nth-of-type(1) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(1) {
+    text-shadow: 1px 1px #000;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .header__slogan h2:nth-of-type(1) {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(1) {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(1) {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1680px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(1) {
+    font-size: 3.5rem;
+  }
+}
+
+.header__slogan h2:nth-of-type(2) {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Merriweather', sans-serif;
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(2) {
+    text-shadow: 1px 1px #000;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .header__slogan h2:nth-of-type(2) {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(2) {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(2) {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1680px) and (orientation: landscape) {
+  .header__slogan h2:nth-of-type(2) {
+    font-size: 2.5rem;
   }
 }
 
@@ -816,7 +989,7 @@ body {
 
 @media (min-width: 410px) and (orientation: portrait) {
   .article__text__content {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -828,7 +1001,7 @@ body {
 
 @media (min-width: 800px) and (orientation: landscape) {
   .article__text__content {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1176,7 +1349,7 @@ body {
 .events__event {
   min-width: 360px;
   width: 25%;
-  height: 100%;
+  min-height: 100%;
   text-align: center;
   border-radius: 5px;
   margin: 2% 0;
@@ -1242,10 +1415,16 @@ body {
   margin: 5% 12.5%;
   text-align: justify;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 @media (min-width: 410px) and (orientation: portrait) {
+  .events__event__text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
   .events__event__text {
     font-size: 1.4rem;
   }
@@ -1253,7 +1432,7 @@ body {
 
 @media (min-width: 800px) and (orientation: landscape) {
   .events__event__text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1263,9 +1442,9 @@ body {
   }
 }
 
-@media (min-width: 800px) and (orientation: portrait) {
+@media (min-width: 1280px) and (orientation: landscape) {
   .events__event__text {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1510,7 +1689,7 @@ body {
   width: 100%;
   min-height: 100%;
   background-color: #3a3d3e;
-  z-index: 0;
+  z-index: -1;
   padding: 5px;
   opacity: 0;
   -webkit-transition: 0.5s;
@@ -1683,6 +1862,7 @@ body {
     position: absolute;
     width: 80%;
     height: 90%;
+    margin-top: 75px;
   }
 }
 
@@ -1809,6 +1989,12 @@ body {
   margin: -4px;
 }
 
+@media (min-width: 1280px) and (orientation: landscape) {
+  .corner-decoration {
+    width: 4rem;
+  }
+}
+
 .corner-decoration--corner-left-top {
   left: 0;
   top: 0;
@@ -1850,6 +2036,12 @@ body {
   }
 }
 
+@media (min-width: 1280px) and (orientation: landscape) {
+  .vertical-decoration {
+    width: 20rem;
+  }
+}
+
 .vertical-decoration--top {
   top: 0;
 }
@@ -1858,5 +2050,153 @@ body {
   bottom: 0;
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
+}
+
+.about {
+  max-width: 1280px;
+  width: 100%;
+  min-height: 200px;
+  margin: 0 auto;
+  background-image: url("../images/caffe-wolf-logo2.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 380px;
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .about {
+    max-width: 1000px;
+  }
+}
+
+.about__bacgrund-brightener {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(226, 226, 226, 0.8);
+}
+
+.about__title {
+  text-align: center;
+  margin: 20px 0;
+  font-style: italic;
+  font-family: 'Merriweather', sans-serif;
+  font-size: 2rem;
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .about__title {
+    margin: 10px 0 20px;
+  }
+}
+
+.about__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about__content__picture {
+  width: 100%;
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .about__content__picture {
+    width: 61%;
+    padding: 0 19.5%;
+    min-height: 200px;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .about__content__picture {
+    width: 50%;
+    margin: 0;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .about__content__picture {
+    width: 40%;
+  }
+}
+
+.about__content__picture img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.about__content__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .about__content__description {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .about__content__description {
+    width: 60%;
+  }
+}
+
+.about__content__description p {
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .about__content__description p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .about__content__description p {
+    padding-top: 0px;
+  }
+}
+
+.about__content__focus-poins {
+  width: 90%;
+  margin: 10px auto;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .about__content__focus-poins {
+    font-size: 1.4rem;
+  }
+}
+
+.about__content__focus-poins h3 {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.about__content__focus-poins h4 {
+  width: 95%;
+  margin: 10px auto 0;
+}
+
+.about__content__focus-poins p {
+  width: 90%;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
