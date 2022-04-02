@@ -33,6 +33,7 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     font-family: 'Roboto', sans-serif;
     padding: 0 10px;
     &__picture {
@@ -40,7 +41,7 @@
 
       @include mediaQueries(smartphone-large, landscape) {
         width: 61%;
-        padding: 0 19.5%;
+        // padding: 0 19.5%;
         min-height: 200px
       }
 

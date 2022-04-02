@@ -14,21 +14,11 @@
   @include mediaQueries(smartphone-large, landscape) {
     height: 240px;
   }
-  // @include mediaQueries(smartphone-large, portrait) {
-  //   height: 40vh;
-  // }
-
-  @include mediaQueries(tablet-medium, portrait) {
-    height: 30vh;
-  }
 
   @include mediaQueries(tablet-large, landscape) {
     height: 300px;
   }
 
-  @include mediaQueries(desktop-medium, landscape) {
-    height: 40vh;
-  }
 
 
   &__comment {
@@ -44,17 +34,10 @@
       height: 240px;
     }
 
-    @include mediaQueries(tablet-medium, portrait) {
-      height: 30vh;
-    }
-
     @include mediaQueries(tablet-large, landscape) {
       height: 300px;
     }
 
-    @include mediaQueries(desktop-medium, landscape) {
-      height: 40vh;
-    }
   }
 
   &__title {

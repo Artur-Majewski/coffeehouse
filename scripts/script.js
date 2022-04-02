@@ -76,7 +76,7 @@ window.addEventListener("resize", () => {
   allInfo.forEach((singleDiv) => {
     singleDiv.style.height = 'auto'
   });
-  
+
   setStyleForDivInfo();
 })
 
@@ -84,44 +84,52 @@ window.addEventListener("resize", () => {
 const commentWrapper = document.querySelector(".comments-slider__wrapper");
 let counterLsit = 1;
 
-const commentsList = document.querySelectorAll(
-  ".comments-slider__wrapper__text"
-);
+const commentsList = document.querySelectorAll(".comments-slider__wrapper__text");
 const leftBtn = document.querySelector(".comments-slider__btn--left");
 const rightBtn = document.querySelector(".comments-slider__btn--right");
-const commentsListSize = commentsList[0].clientWidth;
 
-commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
+let commentsListSize = commentsList[0].clientWidth;
 
-rightBtn.addEventListener("click", () => {
-  if (counterLsit >= commentsList.length - 1) return;
-  commentWrapper.style.transition = "1s ease-in-out";
-  counterLsit++;
+const setStyleForCommentDiv = () => {
   commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
-});
 
-leftBtn.addEventListener("click", () => {
-  if (counterLsit <= 0) return;
-  commentWrapper.style.transition = "transform 0.5s ease-in-out";
-  counterLsit--;
-  commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
-});
-
-commentWrapper.addEventListener("transitionend", () => {
-  if (commentsList[counterLsit].id === "lastClone") {
-    commentWrapper.style.transition = "none";
-    counterLsit = commentsList.length - 2;
+  rightBtn.addEventListener("click", () => {
+    if (counterLsit >= commentsList.length - 1) return;
+    commentWrapper.style.transition = "1s ease-in-out";
+    counterLsit++;
     commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
-  }
+  });
 
-  if (commentsList[counterLsit].id === "firstClone") {
-    commentWrapper.style.transition = "none";
-    counterLsit = commentsList.length - counterLsit;
-    commentWrapper.style.transform = `translateX(${
-      -commentsListSize * counterLsit
-    }px)`;
-  }
-});
+  leftBtn.addEventListener("click", () => {
+    if (counterLsit <= 0) return;
+    commentWrapper.style.transition = "transform 0.5s ease-in-out";
+    counterLsit--;
+    commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
+  });
+
+  commentWrapper.addEventListener("transitionend", () => {
+    if (commentsList[counterLsit].id === "lastClone") {
+      commentWrapper.style.transition = "none";
+      counterLsit = commentsList.length - 2;
+      commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
+    }
+
+    if (commentsList[counterLsit].id === "firstClone") {
+      commentWrapper.style.transition = "none";
+      counterLsit = commentsList.length - counterLsit;
+      commentWrapper.style.transform = `translateX(${
+        -commentsListSize * counterLsit
+      }px)`;
+    }
+  });
+}
+
+setStyleForCommentDiv()
+
+window.addEventListener("resize", () => {
+  commentsListSize = commentsList[0].clientWidth;
+  setStyleForCommentDiv()
+})
 
 // --->>> Section with events <<<--- //
 // Set width of picture in box event
