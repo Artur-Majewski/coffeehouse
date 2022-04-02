@@ -1,3 +1,4 @@
+// --->>> Functionality of the hamburger menu icon <<<--- //
 const btnBurger = document.querySelector(".nav-bar__menu__burger");
 const btnBurgerIcoUpper = document.querySelector(
   ".nav-bar__menu__burger__ico-upper"
@@ -20,7 +21,7 @@ btnBurger.addEventListener("click", () => {
   menuList.classList.toggle("nav-bar__menu__list--active");
 });
 
-
+// --->>> Changing the div element with information inside the header <<<--- //
 let moveCounter = 1;
 let counter = 0;
 allInfo[0].style.opacity = "1";
@@ -30,6 +31,7 @@ moveLeft.addEventListener("click", () => {
   allInfo.forEach((info) => (info.style.opacity = "0"));
   allInfo[counter].style.opacity = "1";
 });
+
 moveRight.addEventListener("click", () => {
   counter >= 2 ? (counter = 0) : counter++;
   allInfo.forEach((info) => (info.style.opacity = "0"));
@@ -44,45 +46,62 @@ window.addEventListener("resize", () => {
   }
 });
 
+// --->>> Set height of box info <<<--- //
+let maxHeightInfoDiv = 0;
+allInfo.forEach((singleDiv) => (
+  singleDiv.clientHeight > maxHeightInfoDiv
+      ? (maxHeightInfoDiv = singleDiv.clientHeight)
+      : null
+));
+allInfo.forEach((singleDiv) => {
+  singleDiv.style.height = `${maxHeightInfoDiv}px`
+});
+
+
+moveLeft.style.height = `${maxHeightInfoDiv * 0.5}px`
+moveLeft.style.marginBottom = `${maxHeightInfoDiv * 0.25}px`
+moveLeft.style.borderTop = `${maxHeightInfoDiv * 0.25}px solid transparent`
+moveLeft.style.borderBottom = `${maxHeightInfoDiv * 0.25}px solid transparent`
+
+moveRight.style.height = `${maxHeightInfoDiv * 0.5}px`
+moveRight.style.marginBottom = `${maxHeightInfoDiv * 0.25}px`
+moveRight.style.borderTop = `${maxHeightInfoDiv * 0.25}px solid transparent`
+moveRight.style.borderBottom = `${maxHeightInfoDiv * 0.25}px solid transparent`
+
 // --->>> Slider with customer comments <<<--- //
 const commentWrapper = document.querySelector(".comments-slider__wrapper");
+let counterLsit = 1;
+
 const commentsList = document.querySelectorAll(
   ".comments-slider__wrapper__text"
 );
 const leftBtn = document.querySelector(".comments-slider__btn--left");
 const rightBtn = document.querySelector(".comments-slider__btn--right");
 const commentsListSize = commentsList[0].clientWidth;
-let counterLsit = 1;
 
-commentWrapper.style.transform = `translateX(${
-  -commentsListSize * counterLsit
-}px)`;
+commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
 
 rightBtn.addEventListener("click", () => {
   if (counterLsit >= commentsList.length - 1) return;
   commentWrapper.style.transition = "1s ease-in-out";
   counterLsit++;
-  commentWrapper.style.transform = `translateX(${
-    -commentsListSize * counterLsit
-  }px)`;
+  commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
 });
+
 leftBtn.addEventListener("click", () => {
   if (counterLsit <= 0) return;
   commentWrapper.style.transition = "transform 0.5s ease-in-out";
   counterLsit--;
-  commentWrapper.style.transform = `translateX(${
-    -commentsListSize * counterLsit
-  }px)`;
+  commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
 });
 
 commentWrapper.addEventListener("transitionend", () => {
   if (commentsList[counterLsit].id === "lastClone") {
     commentWrapper.style.transition = "none";
     counterLsit = commentsList.length - 2;
-    commentWrapper.style.transform = `translateX(${
-      -commentsListSize * counterLsit
-    }px)`;
+    commentWrapper.style.transform = `translateX(${ -commentsListSize * counterLsit }px)`;
   }
+
   if (commentsList[counterLsit].id === "firstClone") {
     commentWrapper.style.transition = "none";
     counterLsit = commentsList.length - counterLsit;
@@ -95,33 +114,27 @@ commentWrapper.addEventListener("transitionend", () => {
 // --->>> Section with events <<<--- //
 // Set width of picture in box event
 document.querySelectorAll(".events__event__picture").forEach((picture) => {
-  picture.style.height = `${
-    document.querySelector(".events__event").clientWidth * 0.75
-  }px`;
+  picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
 });
 
 window.addEventListener("resize", () => {
   document.querySelectorAll(".events__event__picture").forEach((picture) => {
-    picture.style.height = `${
-      document.querySelector(".events__event").clientWidth * 0.75
-    }px`;
+    picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
   });
 });
 
-// Set height of box event
+// --->>> Set height of box event <<<--- //
+const eventDiv = document.querySelectorAll(".events__event");
 let maxHeight = 0;
-document
-  .querySelectorAll(".events__event")
-  .forEach((singleEvent) =>
+eventDiv.forEach((singleEvent) => (
     singleEvent.clientHeight > maxHeight
       ? (maxHeight = singleEvent.clientHeight)
       : null
-  );
-document
-  .querySelectorAll(".events__event")
-  .forEach((singleEvent) => (singleEvent.style.height = `${maxHeight}px`));
+));
 
-// Scroll BTN
+eventDiv.forEach((singleEvent) => (singleEvent.style.height = `${maxHeight}px`));
+
+// --->>> Set Scroll BTN <<<--- //
 const btnScroll = document.querySelector(".grid-wrapper__btnUp");
 btnScroll.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -137,46 +150,43 @@ window.addEventListener("scroll", () => {
   }
 });
 
-///////////////////////
-const homeButton = document.querySelector('.nav-bar__menu__item:nth-child(1)');
-const menuButton = document.querySelector('.nav-bar__menu__item:nth-child(2)');
-const aboutButton = document.querySelector('.nav-bar__menu__item:nth-child(3)');
 
-const menuArticle = document.querySelector(".menu");
+// Creating a list of items inside a menu
 const menuItemLists = document.querySelectorAll(".context__menu");
 const itemList = document.querySelectorAll(".context__menu__list");
-let menuCounter = 0;
+const btnMenuPrev = document.querySelector(".menu__btn--prev");
+const btnMenuNext = document.querySelector(".menu__btn--next");
 
-const btnMenuPrev = document.querySelector('.menu__btn--prev');
-const btnMenuNext = document.querySelector('.menu__btn--next');
+let menuCounter = 0;
 
 
 const drawList = (itemsList, page) => {
   itemsList.forEach((coffee) => {
     const liItem = document.createElement("li");
     liItem.classList.add("context__menu__list__item");
-  
+
     const title = document.createElement("p");
     title.innerText = coffee.name;
     title.classList.add("context__menu__list__item__title");
     liItem.appendChild(title);
-  
+
     const sep = document.createElement("div");
     sep.classList.add("context__menu__list__item__sep");
     liItem.appendChild(sep);
-  
+
     const price = document.createElement("p");
-    price.innerText = `${coffee.priceSmall.toFixed(2)} / ${coffee.priceBug.toFixed(2)} PLN`;
+    price.innerText = `${coffee.priceSmall.toFixed( 2 )} / ${coffee.priceBug.toFixed(2)} PLN`;
     price.classList.add("context__menu__list__item__price");
     liItem.appendChild(price);
-  
+
     itemList[page].appendChild(liItem);
   });
-}
+};
 
 drawList(menuListItem, 0);
 drawList(cakeMenuList, 1);
 
+// System for changing the lists of items in the menu
 let counterMenu = 0;
 menuItemLists[0].style.opacity = "1";
 
@@ -185,26 +195,40 @@ btnMenuPrev.addEventListener("click", () => {
   menuItemLists.forEach((menuCard) => (menuCard.style.opacity = "0"));
   menuItemLists[counterMenu].style.opacity = "1";
 });
+
 btnMenuNext.addEventListener("click", () => {
-  counterMenu >= (menuItemLists.length - 1) ? (counterMenu = 0) : counterMenu++;
+  counterMenu >= menuItemLists.length - 1 ? (counterMenu = 0) : counterMenu++;
   menuItemLists.forEach((menuCard) => (menuCard.style.opacity = "0"));
   menuItemLists[counterMenu].style.opacity = "1";
 });
 
-menuButton.addEventListener('click', () => {
-  menuArticle.classList.toggle('menu--active');
-  menuList.classList.toggle("nav-bar__menu__list--active");
-})
+// --->>> functionality of menu buttons <<<--- //
+const homeButton = document.querySelector(".nav-bar__menu__item:nth-child(1)");
+const menuButton = document.querySelector(".nav-bar__menu__item:nth-child(2)");
+const aboutButton = document.querySelector(".nav-bar__menu__item:nth-child(3)");
+const menuArticle = document.querySelector(".menu");
 
-homeButton.addEventListener('click', () => {
+const clearMenu = () => {
+  menuList.classList.remove("nav-bar__menu__list--active");
+  btnBurgerIcoUpper.classList.remove('active');
+  btnBurgerIcoCenter.classList.remove('active');
+  btnBurgerIcoBottom.classList.remove('active');  
+}
+
+menuButton.addEventListener("click", () => {
+  menuArticle.classList.toggle("menu--active");
+  clearMenu();
+});
+
+homeButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-  menuArticle.classList.remove('menu--active');
-  menuList.classList.toggle("nav-bar__menu__list--active");
-})
+  clearMenu();
+  menuArticle.classList.remove("menu--active");
+});
 
-aboutButton.addEventListener('click', () => {
-  const distFromTop = document.querySelector('.about__title').offsetTop;
-  window.scrollTo({ top: (distFromTop - 100), behavior: "smooth" });
-  menuArticle.classList.remove('menu--active');
-  menuList.classList.toggle("nav-bar__menu__list--active");
-})
+aboutButton.addEventListener("click", () => {
+  const distFromTop = document.querySelector(".about__title").offsetTop;
+  window.scrollTo({ top: distFromTop - 100, behavior: "smooth" });
+  clearMenu();
+  menuArticle.classList.remove("menu--active");
+});

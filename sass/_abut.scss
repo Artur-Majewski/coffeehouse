@@ -28,15 +28,13 @@
     @include mediaQueries(smartphone-large, landscape) {
       margin: 10px 0 20px;
     }
-
   }
 
   &__content {
     display: flex;
     flex-wrap: wrap;
-    // padding: 0 140px;
     font-family: 'Roboto', sans-serif;
-
+    padding: 0 10px;
     &__picture {
       width: 100%;
 
@@ -93,7 +91,6 @@
       }
     }
 
-
     &__focus-poins {
       width: 90%;
       margin: 10px auto;
@@ -120,71 +117,3 @@
     }
   }
 }
-
-////////////////////
-// .about {
-//   max-width: 1280px;
-//   width: 100%;
-//   min-height: 200px;
-//   margin: 0 auto;
-//   background-image: url('../images/caffe-wolf-logo2.png');
-//   background-repeat: no-repeat;
-//   background-position: 50%;
-//   background-size: 380px;
-
-//   &__bacgrund-brightener {
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba($color: $bgcNavDefault, $alpha: 0.8);
-//   }
-
-//   &__title {
-//     text-align: center;
-//     margin: 10px 0;
-//     font-style: italic;
-//     font-family: 'Merriweather', sans-serif;
-//   }
-
-//   &__content {
-//     display: flex;
-//     flex-wrap: wrap;
-//     padding: 0 140px;
-//     font-family: 'Roboto', sans-serif;
-//     &__picture {
-//       width: 350px;
-
-//       & img {
-//         border-radius: 20px;
-//         width: 100%;
-//       }
-//     }
-
-//     &__description {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-evenly;
-//       padding: 15px;
-//       width: calc(100% - 350px);
-//     }
-
-//     &__focus-poins {
-//       width: 80%;
-//       margin: 10px auto;
-
-//       & h3 {
-//         margin-top: 10px;
-//         font-style: italic;
-//       }
-
-//       & h4 {
-//         width: 95%;
-//         margin: 10px auto 0;
-//       }
-
-//       & p {
-//         width: 90%;
-//         margin: 0 auto;
-//       }
-//     }
-//   }
-// }

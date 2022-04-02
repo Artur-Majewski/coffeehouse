@@ -34,7 +34,6 @@
     @include mediaQueries(smartphone-large, landscape) {
       width: 35%;
       left: 83%;
-      top: calc(100px + 1%);
       top: calc(100px + 5%);
     }
 
@@ -66,17 +65,19 @@
       }
     }
 
-
     & h1 {
       @include mediaQueries(tablet-small, portrait) {
         font-size: 3.5rem;
       }
+
       @include mediaQueries(tablet-large, landscape) {
         font-size: 2.5rem;
       }
+
       @include mediaQueries(desktop-small, landscape) {
         font-size: 3.5rem;
       }
+
       @include mediaQueries(desktop-medium, landscape) {
         font-size: 5rem;
       }
@@ -85,6 +86,7 @@
     & h2:nth-of-type(1) {
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
+
       @include mediaQueries(smartphone-large, landscape) {
         text-shadow: 1px 1px #000;
         font-size: 1rem;
@@ -101,9 +103,11 @@
       @include mediaQueries(tablet-large, landscape) {
         font-size: 1.5rem;
       }
+
       @include mediaQueries(desktop-small, landscape) {
         font-size: 2rem;
       }
+
       @include mediaQueries(desktop-medium, landscape) {
         font-size: 3.5rem;
       }
@@ -119,15 +123,19 @@
         text-shadow: 1px 1px #000;
         font-size: 1rem;
       }
+
       @include mediaQueries(tablet-small, portrait) {
         font-size: 1.8rem;
       }
+
       @include mediaQueries(tablet-medium, landscape) {
         font-size: 1.2rem;
       }
+
       @include mediaQueries(desktop-small, landscape) {
         font-size: 1.7rem;
       }
+
       @include mediaQueries(desktop-medium, landscape) {
         font-size: 2.5rem;
       }
@@ -150,11 +158,12 @@
     &__move {
       position: relative;
       width: 10%;
-      margin-top: calc((100vh - 100px) * 0.095);
-      margin-bottom: calc((100vh - 100px) * 0.095);
+      // margin-top: calc((100vh - 100px) * 0.095);
+      // margin-bottom: calc((100vh - 100px) * 0.095);
       z-index: 3;
-      border-top: calc((100vh - 100px) * 0.095) solid transparent;
-      border-bottom: calc((100vh - 100px) * 0.095) solid transparent;
+      // border-top: calc(100%) solid black;
+      // border-bottom: calc(100%) solid black;
+      // padding: 25% 0;
 
       &:nth-child(1) {
         border-right: 40px solid rgba(150, 150, 150, 0.5);
@@ -167,15 +176,15 @@
       }
 
       @include mediaQueries(smartphone, portrait) {
-        margin-top: calc((100vh - 100px) * 0.075);
-        margin-bottom: calc((100vh - 100px) * 0.075);
+        // margin-top: calc((100vh - 100px) * 0.075);
+        // margin-bottom: calc((100vh - 100px) * 0.075);
       }
 
       @include mediaQueries(smartphone-large, landscape) {
-        margin-top: calc((100vh - 100px) * 0.1125);
-        margin-bottom: calc((100vh - 100px) * 0.1125);
-        border-top: calc((100vh - 100px) * 0.1125) solid transparent;
-        border-bottom: calc((100vh - 100px) * 0.1125) solid transparent;
+        // margin-top: calc((100vh - 100px) * 0.1125);
+        // margin-bottom: calc((100vh - 100px) * 0.1125);
+        // border-top: calc((100vh - 100px) * 0.1125) solid transparent;
+        // border-bottom: calc((100vh - 100px) * 0.1125) solid transparent;
 
         &:nth-child(1) {
           left: 3%;
@@ -188,23 +197,23 @@
 
       @include mediaQueries(tablet-small, portrait) {
         &:nth-child(1) {
-          border-right: 50px solid rgba(150, 150, 150, 0.5);
+          // border-right: 50px solid rgba(150, 150, 150, 0.5);
           left: 8%;
         }
 
         &:nth-child(2) {
-          border-left: 50px solid rgba(150, 150, 150, 0.5);
+          // border-left: 50px solid rgba(150, 150, 150, 0.5);
           right: 8%;
         }
       }
 
       @include mediaQueries(tablet-small, landscape) {
         &:nth-child(1) {
-          border-right: 50px solid rgba(150, 150, 150, 0.5);
+          // border-right: 50px solid rgba(150, 150, 150, 0.5);
         }
 
         &:nth-child(2) {
-          border-left: 50px solid rgba(150, 150, 150, 0.5);
+          // border-left: 50px solid rgba(150, 150, 150, 0.5);
         }
       }
 
@@ -218,18 +227,16 @@
   &__info {
     position: absolute;
     width: 100%;
-    height: 255px;
+    min-height: 50px;
     background-color: rgba($color: white, $alpha: 0.8);
-    box-shadow: 0 0 20px 10px rgba($color: white, $alpha: 0.8);
+    box-shadow: 0 0 5px 5px rgba($color: white, $alpha: 0.8);
     opacity: 0;
     transition: 1s;
-
-    @include mediaQueries(smartphone, portrait) {
-      height: 295px;
-    }
+    padding: 10px 0 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
     @include mediaQueries(smartphone-large, landscape) {
-      height: 140px;
       width: 90%;
       margin-left: 5%;
     }
@@ -239,28 +246,33 @@
       margin-left: 10%;
     }
 
-    @include mediaQueries(tablet-medium, portrait) {
-      height: 350px;
-    }
-
     @include mediaQueries(tablet-large, landscape) {
-      height: 290px;
       position: static;
       width: calc((100% - 10%)/ 3);
       max-width: calc(1280px / 3);
       opacity: 1;
       margin: 0;
 
-      &:nth-child(4) {
-        background-color: rgba($color: rgb(226, 226, 226), $alpha: 0.9);
-        box-shadow: 0 0 20px 10px rgba($color: rgb(226, 226, 226), $alpha: 0.9);
-        z-index: 1;
+
+      &:nth-of-type(1) {
+        border-top-left-radius: 20px;
       }
 
+      &:nth-of-type(2) {
+        background-color: rgba($color: rgb(226, 226, 226), $alpha: 0.9);
+        box-shadow: 0 0 5px 5px rgba($color: rgb(226, 226, 226), $alpha: 0.9);
+        z-index: 1;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+
+      &:nth-of-type(3) {
+        border-top-right-radius: 20px;
+      }
     }
 
     @include mediaQueries(desktop-small, landscape) {
-      height: calc((100vh - 100px) * 0.3);
+      // height: calc((100vh - 100px) * 0.3);
     }
 
     &__title {
@@ -309,7 +321,7 @@
       }
 
       @include mediaQueries(smartphone-large, landscape) {
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding-left: 10%;
         padding-right: 10%;
       }

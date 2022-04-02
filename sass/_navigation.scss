@@ -9,8 +9,6 @@
   background-color: $bgcNavDefault;
   z-index: 100;
 
-  @include mediaQueries(smartphone-large, landscape) {}
-
   @include mediaQueries(tablet-large, landscape) {
     justify-content: flex-start;
   }
@@ -18,8 +16,6 @@
   &__logotype__ico {
     margin-left: 20px;
     height: $navHeight;
-
-
   }
 
   &__logotype__name {
@@ -28,9 +24,6 @@
     color: rgb(50, 50, 50);
     margin-right: 100px;
     text-align: center;
-
-    // @include mediaQueries(smartphone){
-    // }
 
     @include mediaQueries(smartphone) {
       font-size: 2.5rem;
@@ -61,8 +54,8 @@
       flex-direction: column;
       align-items: center;
       list-style: none;
-      transition: 1s;
       opacity: 0;
+      transition: 1s;
 
       @include mediaQueries(tablet-large, landscape) {
         position: static;
@@ -97,13 +90,11 @@
 
       @include mediaQueries(tablet-large, landscape) {
         position: relative;
-        top: auto;
-        left: auto;
+        top: 0;
+        left: 0;
         display: block;
         padding: 0 30px;
         font-size: 1.5rem;
-        width: auto;
-
         font-weight: bold;
         line-height: 3rem;
         text-transform: uppercase;
@@ -164,11 +155,11 @@
       }
 
       &__ico-upper.active {
-        transform: translateY(12px) rotate(135deg);
+        transform: translateY(13px) rotate(135deg);
       }
 
       &__ico-bottom.active {
-        transform: translateY(-12px) rotate(-135deg);
+        transform: translateY(-13px) rotate(-135deg);
       }
 
       &__ico-center.active {
