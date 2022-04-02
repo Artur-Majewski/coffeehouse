@@ -18,11 +18,10 @@ btnBurger.addEventListener("click", () => {
   btnBurgerIcoCenter.classList.toggle("active");
   btnBurgerIcoBottom.classList.toggle("active");
   menuList.classList.toggle("nav-bar__menu__list--active");
-
-  console.log(btnBurger.classList);
 });
-let moveCounter = 1;
 
+
+let moveCounter = 1;
 let counter = 0;
 allInfo[0].style.opacity = "1";
 
@@ -30,13 +29,11 @@ moveLeft.addEventListener("click", () => {
   counter <= 0 ? (counter = 2) : counter--;
   allInfo.forEach((info) => (info.style.opacity = "0"));
   allInfo[counter].style.opacity = "1";
-  console.log(counter);
 });
 moveRight.addEventListener("click", () => {
   counter >= 2 ? (counter = 0) : counter++;
   allInfo.forEach((info) => (info.style.opacity = "0"));
   allInfo[counter].style.opacity = "1";
-  console.log(counter);
 });
 
 window.addEventListener("resize", () => {
@@ -131,12 +128,67 @@ btnScroll.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   if (window.scrollY > window.innerHeight - 100) {
     btnScroll.style.opacity = 1;
-    btnScroll.style.zIndex= 10;
+    btnScroll.style.zIndex = 10;
   } else {
     btnScroll.style.opacity = 0;
-    btnScroll.style.zIndex= 0;
+    btnScroll.style.zIndex = 0;
   }
 });
+
+///////////////////////
+const menuButton = document.querySelector('.nav-bar__menu__item:nth-child(2)');
+const menuArticle = document.querySelector(".menu");
+const menuItemLists = document.querySelectorAll(".context__menu");
+const itemList = document.querySelectorAll(".context__menu__list");
+let menuCounter = 0;
+
+const btnMenuPrev = document.querySelector('.menu__btn--prev');
+const btnMenuNext = document.querySelector('.menu__btn--next');
+
+
+const drawList = (itemsList, page) => {
+  itemsList.forEach((coffee) => {
+    const liItem = document.createElement("li");
+    liItem.classList.add("context__menu__list__item");
+  
+    const title = document.createElement("p");
+    title.innerText = coffee.name;
+    title.classList.add("context__menu__list__item__title");
+    liItem.appendChild(title);
+  
+    const sep = document.createElement("div");
+    sep.classList.add("context__menu__list__item__sep");
+    liItem.appendChild(sep);
+  
+    const price = document.createElement("p");
+    price.innerText = `${coffee.priceSmall.toFixed(2)} / ${coffee.priceBug.toFixed(2)} PLN`;
+    price.classList.add("context__menu__list__item__price");
+    liItem.appendChild(price);
+  
+    itemList[page].appendChild(liItem);
+  });
+}
+
+drawList(menuListItem, 0);
+drawList(cakeMenuList, 1);
+
+let counterMenu = 0;
+menuItemLists[0].style.opacity = "1";
+
+btnMenuPrev.addEventListener("click", () => {
+  counterMenu <= 0 ? (counterMenu = menuItemLists.length - 1) : counterMenu--;
+  menuItemLists.forEach((menuCard) => (menuCard.style.opacity = "0"));
+  menuItemLists[counterMenu].style.opacity = "1";
+});
+btnMenuNext.addEventListener("click", () => {
+  counterMenu >= (menuItemLists.length - 1) ? (counterMenu = 0) : counterMenu++;
+  menuItemLists.forEach((menuCard) => (menuCard.style.opacity = "0"));
+  menuItemLists[counterMenu].style.opacity = "1";
+});
+
+menuButton.addEventListener('click', () => {
+  menuArticle.classList.toggle('menu--active');
+  menuList.classList.toggle("nav-bar__menu__list--active");
+})

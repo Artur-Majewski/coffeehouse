@@ -17,12 +17,68 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;1,400;1,500;1,700&family=Merriweather:ital,wght@0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <div class="grid-wrapper">
     <button class="grid-wrapper__btnUp"><i class="fa-solid fa-angle-up"></i></button>
+
+    <section class="menu">
+      <div class="menu__background-img">
+        <div class="menu__outer-border">
+          <div class="menu__mid-border">
+            <div class="menu__inner-border">
+              <img class="corner-decoration corner-decoration--corner-left-top"
+                src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-decoration--corner-right-top"
+                src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-decoration--corner-right-bottom"
+                src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="corner-decoration corner-decoration--corner-left-bottom"
+                src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
+              <img class="vertical-decoration vertical-decoration--top"
+                src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+              <img class="vertical-decoration vertical-decoration--bottom"
+                src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
+
+              <!-- Page Content -->
+              <div class="context">
+                <h2 class="context__title">Coffee Wolf Menu</h2>
+                <article class="context__menu">
+                  <h3 class="context__menu__title">Coffee</h3>
+                  <ul class="context__menu__list">
+                  </ul>
+                </article>
+                <article class="context__menu">
+                  <h3 class="context__menu__title">Cake</h3>
+                    <ul class="context__menu__list">
+                  </ul>
+                </article>
+
+                <!-- 
+                <ul class="context__menu-list">
+                <ul class="context__menu-list">
+                </ul> -->
+                <!-- <ul class="context__menu-list"></ul> -->
+
+              </div>
+            </div>
+            <button class="menu__btn menu__btn--prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="menu__btn menu__btn--next"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
     <nav class="nav-bar">
       <img src="./images/caffe-wolf-logo2.png" alt="coffeehouse logo" class="nav-bar__logotype__ico">
       <h1 class="nav-bar__logotype__name">Coffee Wolf</h1>
@@ -34,7 +90,7 @@
         </div>
         <ul class="nav-bar__menu__list">
           <li class="nav-bar__menu__item">Home</li>
-          <li class="nav-bar__menu__item">Memnu</li>
+          <li class="nav-bar__menu__item">Menu</li>
           <li class="nav-bar__menu__item">About</li>
         </ul>
       </div>
@@ -54,12 +110,12 @@
           <div class="header__info__content">
             Our unique flash chill procedure allows us to harness the natural properties of each coffee by brewing it
             with hot water, then locking them in by instantly lowering the temperature level for that unique samk.
-
           </div>
         </article>
         <article class="header__info">
           <h2 class="header__info__title">Homely atmosphere</h2>
-          <div class="header__info__content">Our aim is to create a place where you will always return with a smile and feel at home. You can be sure that our staff will always welcome you with a smile on their lips. </div>
+          <div class="header__info__content">Our aim is to create a place where you will always return with a smile and
+            feel at home. You can be sure that our staff will always welcome you with a smile on their lips. </div>
         </article>
       </section>
     </header>
@@ -84,7 +140,8 @@
         <div class="article__text">
           <h2 class="article__text__title">Drink delicious beautifully served coffee</h2>
           <div class="article__text__content">In our café I have many kinds of coffee and many ways of serving them,
-            which are just waiting for you to try them. If you wish, our baristas will make you a coffee from a blend of beans of
+            which are just waiting for you to try them. If you wish, our baristas will make you a coffee from a blend of
+            beans of
             your choice. Don't be afraid to experiment.</div>
         </div>
       </article>
@@ -215,6 +272,7 @@
       </section>
     </footer>
   </div>
+  <script src="scripts/menu-data.js"></script>
   <script src="scripts/script.js"></script>
 </body>
 
