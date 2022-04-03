@@ -258,12 +258,20 @@ aboutButton.addEventListener("click", () => {
 
 // --->>> disappearance and appearance of the scroll bar  <<<--- //
 let timeoutlRef;
-['mousemove', 'wheel'].forEach( ev => {
-  window.addEventListener( ev , () => {
-    clearTimeout(timeoutlRef);
-    document.body.style.overflow = 'overlay';
-    timeoutlRef = setTimeout( () => {
-      document.body.style.overflow = 'hidden';
-    }, 500)
-  })
+
+window.addEventListener( 'mousemove' , () => {
+  console.log('ruch')
+  clearTimeout(timeoutlRef);
+  document.body.style.overflow = 'overlay';
+  timeoutlRef = setTimeout( () => {
+    document.body.style.overflow = 'hidden';
+  }, 1000)
+})
+
+window.addEventListener( 'wheel' , () => {
+  clearTimeout(timeoutlRef);
+  document.body.style.overflow = 'overlay';
+  timeoutlRef = setTimeout( () => {
+    document.body.style.overflow = 'hidden';
+  }, 500)
 })

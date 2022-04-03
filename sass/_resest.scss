@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+html {
+  @supports (-moz-appearance:none) {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+}
+
 body {
   overflow: overlay;
 }

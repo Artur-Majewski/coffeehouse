@@ -5,6 +5,13 @@
           box-sizing: border-box;
 }
 
+@supports (-moz-appearance: none) {
+  html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+}
+
 body {
   overflow: overlay;
 }
