@@ -255,3 +255,15 @@ aboutButton.addEventListener("click", () => {
   clearMenu();
   document.body.style.overflow = 'overlay';
 });
+
+// --->>> disappearance and appearance of the scroll bar  <<<--- //
+let timeoutlRef;
+['mousemove', 'wheel'].forEach( ev => {
+  window.addEventListener( ev , () => {
+    clearTimeout(timeoutlRef);
+    document.body.style.overflow = 'overlay';
+    timeoutlRef = setTimeout( () => {
+      document.body.style.overflow = 'hidden';
+    }, 500)
+  })
+})
