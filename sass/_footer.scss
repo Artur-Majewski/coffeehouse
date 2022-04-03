@@ -3,7 +3,6 @@
   background-position: center;
   background-size: cover;
   background-image: url('../images/footer_background.jpg');
-  // overflow: hidden;
 
   &::before {
     content: '';
@@ -11,22 +10,18 @@
     width: 100%;
     box-shadow: 0 0 5px 10px rgba($color: $bgcNavDefault, $alpha: 1.0);
   }
-
 }
 
 .informations {
-  max-width: 1280px;
-  width: 100%;
-  min-height: 40vh;
-  margin: 0 auto;
-
-  // display: flex;
-  // justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-content: space-evenly;
+  max-width: 1280px;
+  width: 100%;
+  min-height: 40vh;
+  margin: 0 auto;
 
   @include mediaQueries(tablet-small, portrait) {
     flex-direction: row;
@@ -37,30 +32,28 @@
   }
 
   &__information {
-    margin-top: 15px;
-    padding: 5%;
-    // width: 30%;
+    display: flex;
+    flex-direction: column;
     max-width: 360px;
     width: 90%;
     min-height: 40vh;
+    margin-top: 15px;
+    padding: 2% 5% 5%;
     background-color: rgba($color: #000000, $alpha: 0.2);
 
-    display: flex;
-    flex-direction: column;
-
     @include mediaQueries(tablet-small, portrait) {
-      padding: 2.5%;
+      padding: 1% 2.5% 2.5%;
     }
 
     @include mediaQueries(tablet-medium, landscape) {
-      padding: 2.5%;
+      padding: 1% 2.5% 2.5%;
     }
 
     &__address,
     &__contact {
       margin-top: 3%;
-      color: white;
       font-size: 1.1rem;
+      color: white;
 
       @include mediaQueries(smartphone, portrait) {
         font-size: 1.4rem;
@@ -142,8 +135,8 @@
 
       &__title {
         padding-top: 5%;
-        color: white;
         font-size: 1.1rem;
+        color: white;
 
         @include mediaQueries(smartphone, portrait) {
           font-size: 1.4rem;
@@ -174,7 +167,5 @@
         }
       }
     }
-
-
   }
 }

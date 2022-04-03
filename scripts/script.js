@@ -232,23 +232,26 @@ const clearMenu = () => {
   menuList.classList.remove("nav-bar__menu__list--active");
   btnBurgerIcoUpper.classList.remove('active');
   btnBurgerIcoCenter.classList.remove('active');
-  btnBurgerIcoBottom.classList.remove('active');  
+  btnBurgerIcoBottom.classList.remove('active');
 }
 
 menuButton.addEventListener("click", () => {
   menuArticle.classList.toggle("menu--active");
+  [...menuArticle.classList].includes('menu--active') ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'overlay';
   clearMenu();
 });
 
 homeButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-  clearMenu();
   menuArticle.classList.remove("menu--active");
+  clearMenu();
+  document.body.style.overflow = 'overlay';
 });
 
 aboutButton.addEventListener("click", () => {
   const distFromTop = document.querySelector(".about__title").offsetTop;
   window.scrollTo({ top: distFromTop - 100, behavior: "smooth" });
-  clearMenu();
   menuArticle.classList.remove("menu--active");
+  clearMenu();
+  document.body.style.overflow = 'overlay';
 });

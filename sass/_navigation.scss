@@ -1,10 +1,10 @@
 .nav-bar {
   position: fixed;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: $navHeight;
   background-color: $bgcNavDefault;
   z-index: 100;
@@ -14,20 +14,19 @@
   }
 
   &__logotype__ico {
-    margin-left: 20px;
     height: $navHeight;
+    margin-left: 20px;
   }
 
   &__logotype__name {
-    font-size: 2rem;
-    width: auto;
-    color: rgb(50, 50, 50);
     margin-right: 100px;
+    font-size: 2rem;
+    color: rgb(50, 50, 50);
     text-align: center;
 
     @include mediaQueries(smartphone) {
-      font-size: 2.5rem;
       margin-right: 50px;
+      font-size: 2.5rem;
       text-align: left;
     }
 
@@ -50,9 +49,9 @@
       top: 100px;
       left: 100%;
       display: flex;
-      width: 100%;
       flex-direction: column;
       align-items: center;
+      width: 100%;
       list-style: none;
       opacity: 0;
       transition: 1s;
@@ -72,21 +71,18 @@
         left: 0%;
         opacity: 1;
       }
-
     }
 
     &__item {
       top: 100px;
       left: 0;
-      font-size: 2rem;
-      font-family: 'PT Serif', serif;
-      line-height: 5rem;
       width: 100%;
       text-align: center;
+      font-size: 2rem;
+      line-height: 5rem;
+      font-family: 'PT Serif', serif;
       background-color: $bgcNavDefault;
       cursor: pointer;
-
-      
 
       @include mediaQueries(tablet-large, landscape) {
         position: relative;
@@ -95,8 +91,8 @@
         display: block;
         padding: 0 30px;
         font-size: 1.5rem;
-        font-weight: bold;
         line-height: 3rem;
+        font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
 
@@ -124,7 +120,8 @@
 
         &:hover::before {
           border-left: 1rem solid black;
-          & .active{
+
+          & .active {
             border-left: 1rem solid black;
           }
         }
@@ -132,8 +129,6 @@
         &:hover::after {
           border-right: 1rem solid black;
         }
-
-        
       }
     }
 
@@ -149,8 +144,8 @@
         background: #000;
         display: block;
         height: 6px;
-        border-radius: 3px;
         margin: 7px 0;
+        border-radius: 3px;
         transition: 0.5s;
       }
 

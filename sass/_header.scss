@@ -21,33 +21,33 @@
 
   &__slogan {
     position: absolute;
-    width: 100%;
     top: calc(100px + 5%);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    width: 100%;
     text-align: center;
+    color: white;
 
     @include mediaQueries(smartphone-large, landscape) {
-      width: 35%;
       left: 83%;
       top: calc(100px + 5%);
+      width: 35%;
     }
 
     @include mediaQueries(tablet-large, landscape) {
-      width: 100%;
       left: 50%;
+      width: 100%;
     }
 
     & i {
       position: relative;
       top: -5px;
       height: rem;
-      font-size: 0.5rem;
       line-height: 1rem;
+      font-size: 0.5rem;
 
       @include mediaQueries(tablet-small, portrait) {
         top: -10px;
@@ -144,10 +144,10 @@
 
   &__infos {
     display: flex;
-    height: calc(100vh - 100px);
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+    height: calc(100vh - 100px);
     transition: 1s;
 
     @include mediaQueries(tablet-large, landscape) {
@@ -160,13 +160,13 @@
       z-index: 3;
 
       &:nth-child(1) {
-        border-right: 40px solid rgba(150, 150, 150, 0.5);
         left: 1%;
+        border-right: 40px solid rgba(150, 150, 150, 0.5);
       }
 
       &:nth-child(2) {
-        border-left: 40px solid rgba(150, 150, 150, 0.5);
         right: 1%;
+        border-left: 40px solid rgba(150, 150, 150, 0.5);
       }
 
       @include mediaQueries(smartphone-large, landscape) {
@@ -193,7 +193,6 @@
       @include mediaQueries(tablet-large, landscape) {
         display: none;
       }
-
     }
   }
 
@@ -201,13 +200,13 @@
     position: absolute;
     width: 100%;
     min-height: 50px;
+    padding: 10px 0 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background-color: rgba($color: white, $alpha: 0.8);
     box-shadow: 0 0 5px 5px rgba($color: white, $alpha: 0.8);
     opacity: 0;
     transition: 1s;
-    padding: 10px 0 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 
     @include mediaQueries(smartphone-large, landscape) {
       width: 90%;
@@ -221,11 +220,10 @@
 
     @include mediaQueries(tablet-large, landscape) {
       position: static;
-      width: calc((100% - 10%)/ 3);
       max-width: calc(1280px / 3);
-      opacity: 1;
+      width: calc((100% - 10%)/ 3);
       margin: 0;
-
+      opacity: 1;
 
       &:nth-of-type(1) {
         border-top-left-radius: 20px;
@@ -235,9 +233,9 @@
       &:nth-of-type(2) {
         background-color: rgba($color: rgb(226, 226, 226), $alpha: 0.9);
         box-shadow: 0 0 5px 5px rgba($color: rgb(226, 226, 226), $alpha: 0.9);
-        z-index: 1;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
+        z-index: 1;
       }
 
       &:nth-of-type(3) {
@@ -249,8 +247,8 @@
     &__title {
       width: 100%;
       text-align: center;
-      font-size: 1.5rem;
       line-height: 3rem;
+      font-size: 1.5rem;
       font-family: 'Roboto', sans-serif;
 
       @include mediaQueries(smartphone-large, landscape) {
@@ -281,9 +279,9 @@
     }
 
     &__content {
-      text-align: center;
       padding-left: 15%;
       padding-right: 15%;
+      text-align: center;
       font-size: 1.2rem;
       font-family: 'Roboto', sans-serif;
 

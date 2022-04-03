@@ -5,8 +5,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-y: hidden;
   background-color: $bgcNavDefault;
+  overflow-y: hidden;
 
   &__btnUp{
     position: fixed;
@@ -17,10 +17,10 @@ body {
     border-style: none;
     border-radius: 50%;
     background-color: rgb(245, 209, 173);
-    overflow: hidden;
     cursor: pointer;
-    transition: 0.3s;
     opacity: 0;
+    transition: 0.3s;
+    overflow: hidden;
 
     @include mediaQueries (smartphone-small, portrait) {
       bottom: 2%;
@@ -31,10 +31,10 @@ body {
     }
     
     & i {
-      font-size: 2.5rem;
-      color: rgb(104, 55, 24);
-      text-shadow: 0 12px 0, 0 -12px 0;
       transform: translateY(65px);
+      font-size: 2.5rem;
+      text-shadow: 0 12px 0, 0 -12px 0;
+      color: rgb(104, 55, 24);
       animation: arrowUp 5s infinite linear;
     }
   }
