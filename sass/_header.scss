@@ -1,7 +1,7 @@
 .header {
   margin-top: 100px;
   height: calc(100vh - 100px);
-  background-color: orange;
+  background-color: $bgcNavDefault;
   background-image: url('../images/coffee_header_400-640.jpg');
   background-repeat: no-repeat;
   background-size: cover;
