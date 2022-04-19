@@ -154,22 +154,6 @@ eventDiv.forEach((singleEvent) => (
 
 eventDiv.forEach((singleEvent) => (singleEvent.style.height = `${maxHeight}px`));
 
-// --->>> Set Scroll BTN <<<--- //
-const btnScroll = document.querySelector(".grid-wrapper__btnUp");
-btnScroll.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > window.innerHeight - 100) {
-    btnScroll.style.opacity = 1;
-    btnScroll.style.zIndex = 10;
-  } else {
-    btnScroll.style.opacity = 0;
-    btnScroll.style.zIndex = 0;
-  }
-});
-
 
 // Creating a list of items inside a menu
 const menuItemLists = document.querySelectorAll(".context__menu");
