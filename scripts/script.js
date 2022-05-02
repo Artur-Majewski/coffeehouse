@@ -38,13 +38,13 @@ moveRight.addEventListener("click", () => {
   allInfo[counter].style.opacity = "1";
 });
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth >= 1024 && allInfo[0].style.opacity !== "1") {
-    allInfo.forEach((info) => {
-      info.style.opacity = "1";
-    });
-  }
-});
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth >= 1024 && allInfo[0].style.opacity !== "1") {
+//     allInfo.forEach((info) => {
+//       info.style.opacity = "1";
+//     });
+//   }
+// });
 
 // --->>> Set height of box info <<<--- //
 const moveBtnsInfo = document.querySelectorAll('.header__infos__move');
@@ -70,15 +70,15 @@ const setStyleForDivInfo = () => {
 
 setStyleForDivInfo()
 
-window.addEventListener("resize", () => {
-  maxHeightInfoDiv = 0;
+// window.addEventListener("resize", () => {
+//   maxHeightInfoDiv = 0;
 
-  allInfo.forEach((singleDiv) => {
-    singleDiv.style.height = 'auto'
-  });
+//   allInfo.forEach((singleDiv) => {
+//     singleDiv.style.height = 'auto'
+//   });
 
-  setStyleForDivInfo();
-})
+//   setStyleForDivInfo();
+// })
 
 // --->>> Slider with customer comments <<<--- //
 const commentWrapper = document.querySelector(".comments-slider__wrapper");
@@ -129,6 +129,23 @@ setStyleForCommentDiv()
 window.addEventListener("resize", () => {
   commentsListSize = commentsList[0].clientWidth;
   setStyleForCommentDiv()
+
+  // Set width of picture in box event
+  document.querySelectorAll(".events__event__picture").forEach((picture) => {
+    picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
+  });
+
+  maxHeightInfoDiv = 0;
+  allInfo.forEach((singleDiv) => {
+    singleDiv.style.height = 'auto'
+  });
+  setStyleForDivInfo();
+
+  if (window.innerWidth >= 1024 && allInfo[0].style.opacity !== "1") {
+    allInfo.forEach((info) => {
+      info.style.opacity = "1";
+    });
+  }
 })
 
 // --->>> Section with events <<<--- //
@@ -137,11 +154,11 @@ document.querySelectorAll(".events__event__picture").forEach((picture) => {
   picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
 });
 
-window.addEventListener("resize", () => {
-  document.querySelectorAll(".events__event__picture").forEach((picture) => {
-    picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
-  });
-});
+// window.addEventListener("resize", () => {
+//   document.querySelectorAll(".events__event__picture").forEach((picture) => {
+//     picture.style.height = `${ document.querySelector(".events__event").clientWidth * 0.75 }px`;
+//   });
+// });
 
 // --->>> Set height of box event <<<--- //
 const eventDiv = document.querySelectorAll(".events__event");
